@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import styled from 'styled-components'
 
 import Logo from './Logo'
+import Menu from './Menu'
 
 const Header = () => {
     const [offset, setOffset] = useState(0)
@@ -18,6 +19,7 @@ const Header = () => {
 
     return <HeaderWrapper offset={offset || 0}>
         <Logo />
+        <Menu />
     </HeaderWrapper>
 }
 
@@ -29,7 +31,8 @@ const HeaderWrapper = styled.header<HeaderWrapperProps>`
     padding: 1em;
 
     display: flex;
-    align-content: center;
+    align-items: center;
+    justify-content: space-between;
 
     position: sticky;
     left: 0;

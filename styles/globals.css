@@ -9,10 +9,23 @@ body {
 }
 
 a {
-  color: inherit;
+  color: #282893;
   text-decoration: none;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  color: #242486;
 }
 
 * {
   box-sizing: border-box;
+}
+
+button {
+  border: 0;
+  background-color: transparent;
+  box-shadow: none;
+  cursor: pointer;
 }

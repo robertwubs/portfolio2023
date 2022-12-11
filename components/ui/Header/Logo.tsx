@@ -1,3 +1,4 @@
+import { colors } from "lib/colors"
 import Link from "next/link"
 import styled, { keyframes, css } from "styled-components"
 
@@ -32,7 +33,7 @@ const Letter = styled.span`
     display: inline-block;
 
     &.blue {
-        color: #3232b9;
+        color: ${colors.blue};
     }
 
     &:not(.fixed){
@@ -47,6 +48,9 @@ const Letter = styled.span`
 `
 
 const LettersContainer = styled(Link)`
+    position: relative;
+    z-index: 2;
+
     &:hover ${Letter} {
         &:not(.fixed){
             animation: ${animations.expand} 500ms ease-in-out forwards;

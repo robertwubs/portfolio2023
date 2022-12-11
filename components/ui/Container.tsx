@@ -10,9 +10,9 @@ interface ContainerProps {
 const Container = ({ children }: ContainerProps) => {
     return <ContainerWrapper>
         <Header />
-        <div>
-            {children}
-        </div>
+
+        {children}
+
         <Footer />
     </ContainerWrapper>
 }
