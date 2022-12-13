@@ -4,8 +4,11 @@ import styled from "styled-components"
 import Link from 'next/link'
 
 import { animations } from 'lib/animations'
+import { useGlobalContext } from "lib/context/GlobalContext"
 
 const Logo = () => {
+    const { pageTitle } = useGlobalContext()
+
     return <LettersContainer href="/">
         <Letter className="invert fixed">R</Letter>
         <Letter className="invert">O</Letter>
@@ -17,8 +20,23 @@ const Logo = () => {
         <Letter className="blue">U</Letter>
         <Letter className="blue">B</Letter>
         <Letter className="blue">S</Letter>
+        <Title>
+            {pageTitle}
+        </Title>
     </LettersContainer>
 }
+
+const Title = styled.p`
+    color: white;
+    padding-left: 15px;
+    display: block;
+    margin: 0;
+    pointer-events: none;
+    font-weight: bolder;
+    
+    animation: ${animations.moveLeftTitle} 500ms ease-in-out forwards;
+    animation-delay: 2s;
+`
 
 const Letter = styled.span`
     color: black;
@@ -33,7 +51,7 @@ const Letter = styled.span`
     }
 
     &:not(.fixed){
-        animation: ${animations.shrink} 500ms ease-in-out forwards;
+        animation: ${animations.shrink} 350ms ease-in-out forwards;
         animation-delay: 2s;
     }
 
@@ -46,7 +64,9 @@ const Letter = styled.span`
 const LettersContainer = styled(Link)`
     position: relative;
     z-index: 2;
+    display: flex;
+    align-items: center;
 `
 
 export default Logo
-export { Letter }
+export { Letter, Title }

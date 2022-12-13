@@ -51,6 +51,7 @@ interface OverlayProps {
 const Button = styled.button`
     position: relative;
     z-index: 2;
+    padding: 0;
 `
 
 const Overlay = styled.nav<OverlayProps>`

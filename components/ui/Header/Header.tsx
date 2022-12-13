@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 
 import styled from 'styled-components'
 
-import Logo, { Letter } from './Logo'
+import Logo, { Letter, Title } from './Logo'
 import Menu from './Menu'
 
 const Header = () => {
@@ -30,7 +30,7 @@ interface HeaderWrapperProps {
 
 const HeaderWrapper = styled.header<HeaderWrapperProps>`
     padding: 16px;
-    height: 54px;
+    height: 65px;
     width: 100%;    
 
     display: flex;
@@ -64,12 +64,16 @@ const HeaderWrapper = styled.header<HeaderWrapperProps>`
 
     &:hover ${Letter} {
         &:not(.fixed){
-            animation: ${animations.expand} 500ms ease-in-out forwards;
+            animation: ${animations.expand} 350ms ease-in-out forwards;
         }
 
         &.fixed.blue {
             animation: ${animations.moveRight} 500ms ease-in-out forwards;
         }
+    }
+
+    &:hover ${Title} {
+        animation: ${animations.moveRightTitle} 500ms ease-in-out forwards;
     }
 `
 

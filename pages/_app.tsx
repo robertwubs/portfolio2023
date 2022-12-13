@@ -8,10 +8,12 @@ import Container from '../components/ui/Container'
 import { AnimatePresence } from "framer-motion"
 import { useRouter } from 'next/router'
 
+import { GlobalProvider } from 'lib/context/GlobalContext'
+
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter()
 
-  return <>
+  return <GlobalProvider>
     <Head>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     </Head>
@@ -24,5 +26,5 @@ export default function App({ Component, pageProps }: AppProps) {
         <Component {...pageProps} key={router.asPath} />
       </AnimatePresence>
     </Container>
-  </>
+  </GlobalProvider>
 }

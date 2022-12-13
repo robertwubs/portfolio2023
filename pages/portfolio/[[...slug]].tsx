@@ -2,13 +2,17 @@ import { GetStaticProps } from 'next'
 
 import PortfolioMenu from "components/PortfolioMenu"
 import menuItems, { MenuItem } from 'lib/data/menuItems'
+import PageTitle from 'components/PageTitle'
 
 interface PageProps {
     menuItems: MenuItem[]
 }
 
 const PortfolioPage = ({ menuItems }: PageProps) => {
-    return <PortfolioMenu menuItems={menuItems} />
+    return <>
+        <PageTitle title="Portfolio" />
+        <PortfolioMenu menuItems={menuItems} />
+    </>
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
