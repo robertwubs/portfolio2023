@@ -1,8 +1,9 @@
+import { animations } from 'lib/animations';
 import { useEffect, useState } from 'react';
 
 import styled from 'styled-components'
 
-import Logo from './Logo'
+import Logo, { Letter } from './Logo'
 import Menu from './Menu'
 
 const Header = () => {
@@ -43,9 +44,33 @@ const HeaderWrapper = styled.header<HeaderWrapperProps>`
     background-color: transparent;
     transition: all 0.2s ease;
 
+    z-index: 1;
+
+    .invert {
+        color: white;
+    }
+
     ${props => props.offset > 20 && `
         background-color: #f2f2f2;
+
+        .invert {
+            color: black;
+        }
     `}
+
+    &:hover {
+        background-color: rgba(0,0,0,0.7);
+    }
+
+    &:hover ${Letter} {
+        &:not(.fixed){
+            animation: ${animations.expand} 500ms ease-in-out forwards;
+        }
+
+        &.fixed.blue {
+            animation: ${animations.moveRight} 500ms ease-in-out forwards;
+        }
+    }
 `
 
 export default Header

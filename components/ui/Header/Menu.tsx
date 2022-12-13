@@ -30,8 +30,8 @@ const Menu = () => {
     return <>
         <Button onClick={() => setMenuVisible(!menuVisible)}>
             <AnimatePresence mode="wait">
-                {menuVisible && <AnimatedIcon key='closeMenuBtn' icon={faTimes} size={"2x"} fixedWidth variants={variants} animate="enter" initial="hidden" exit="exit" transition={{ ease: 'easeInOut', duration: 0.2 }} />}
-                {!menuVisible && <AnimatedIcon key='openMenuBtn' icon={faBars} size={"2x"} fixedWidth variants={variants} animate="enter" initial="hidden" exit="exit" transition={{ ease: 'easeInOut', duration: 0.2 }} />}
+                {menuVisible && <AnimatedIcon className="invert" key='closeMenuBtn' icon={faTimes} size={"2x"} fixedWidth variants={variants} animate="enter" initial="hidden" exit="exit" transition={{ ease: 'easeInOut', duration: 0.2 }} />}
+                {!menuVisible && <AnimatedIcon className="invert" key='openMenuBtn' icon={faBars} size={"2x"} fixedWidth variants={variants} animate="enter" initial="hidden" exit="exit" transition={{ ease: 'easeInOut', duration: 0.2 }} />}
             </AnimatePresence>
         </Button>
         <Overlay visible={menuVisible}>
@@ -54,7 +54,7 @@ const Button = styled.button`
 `
 
 const Overlay = styled.nav<OverlayProps>`
-    background-color: ${colors.white};
+    background-color: ${colors.black};
 
     position: absolute;
     left: 0;
@@ -96,7 +96,7 @@ const MenuList = styled.ul`
         font-weight: bold;
 
         transition: all 0.2s ease;
-        color: ${colors.black};
+        color: ${colors.white};
 
         ${device.tablet} {
             font-size: 3em;

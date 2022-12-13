@@ -2,6 +2,7 @@ import Header from "./Header"
 import Footer from "./Footer"
 
 import styled from 'styled-components'
+import { colors } from "lib/colors"
 
 interface ContainerProps {
     children: JSX.Element | JSX.Element[]
@@ -21,10 +22,10 @@ const ContainerWrapper = styled.div`
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: #f2f2f2;
-    color: black;
+    background-color: ${colors.black};
+    color: ${colors.white};
 
-    div:nth-child(2) {
+    > div:nth-child(2) {
         flex: 1;
     }
 `

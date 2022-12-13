@@ -38,7 +38,7 @@ const menuItems = [
                 slug: 'games/twiins'
             } as MenuItem,
             {
-                title: 'Little Princess',
+                title: `Little\nPrincess`,
                 slug: 'games/little-princess'
             } as MenuItem
         ]

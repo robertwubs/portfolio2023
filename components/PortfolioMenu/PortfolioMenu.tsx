@@ -26,29 +26,55 @@ const PortfolioMenu = ({ menuItems, fromRouter = true, activeSlug = '' }: MenuPr
         menuItems = defaultMenuItems
     }
 
-    return <Wrapper>
-        {slug && Array.isArray(slug) && slug.length > 0 && <Link href={`/portfolio/${slug.slice(0, -1).join('/')}`}>
-            Back
-        </Link>}
-        {menuItems.map((item, idx) => {
-            return <PortfolioMenuItem key={`menu-item-${idx}`} item={item} />
-        })}
-    </Wrapper>
+    return <NoHorizScrollWrapper>
+        <Wrapper>
+            {slug && Array.isArray(slug) && slug.length > 0 && <Link className="backBtn" href={`/portfolio/${slug.slice(0, -1).join('/')}`}>
+                Back
+            </Link>}
+            {menuItems.map((item, idx) => {
+                return <PortfolioMenuItem key={`menu-item-${idx}`} item={item} />
+            })}
+        </Wrapper>
+    </NoHorizScrollWrapper>
 }
+
+const NoHorizScrollWrapper = styled.div` 
+    width: 100vw;
+    overflow-x: hidden;
+
+    display: flex;
+    flex-direction: column;
+`
 
 const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    align-items: center;
+    align-items: stretch;
+
+    overflow: hidden;
+    background-color: black;
+
+    position: relative;
+    left: -30px;
+    width: calc(100% + 60px);
+    flex: 1;
 
     ${device.tablet} {
         flex-direction: row;
     }
 
-    > a {
-        flex: 1;
-        display: block;
+    .backBtn {
+        flex: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-right: 15px;
+        padding-left: 75px;
+
+        ${device.tablet} {
+            padding-top: 0;
+        }
     }
 `
 

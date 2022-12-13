@@ -1,27 +1,23 @@
 import { colors } from "lib/colors"
-import Link from "next/link"
-import styled, { keyframes } from "styled-components"
+import styled from "styled-components"
+
+import Link from 'next/link'
+
+import { animations } from 'lib/animations'
 
 const Logo = () => {
     return <LettersContainer href="/">
-        <Letter className="fixed">R</Letter>
-        <Letter>O</Letter>
-        <Letter>B</Letter>
-        <Letter>E</Letter>
-        <Letter>R</Letter>
-        <Letter>T</Letter>
+        <Letter className="invert fixed">R</Letter>
+        <Letter className="invert">O</Letter>
+        <Letter className="invert">B</Letter>
+        <Letter className="invert">E</Letter>
+        <Letter className="invert">R</Letter>
+        <Letter className="invert">T</Letter>
         <Letter className="fixed blue">W</Letter>
         <Letter className="blue">U</Letter>
         <Letter className="blue">B</Letter>
         <Letter className="blue">S</Letter>
     </LettersContainer>
-}
-
-const animations = {
-    shrink: keyframes`from {transform: rotateY(0deg);} to {transform: rotateY(90deg);}`,
-    expand: keyframes`from {transform: rotateY(90deg);} to {transform: rotateY(0deg);}`,
-    moveLeft: keyframes`from {transform: translateX(0em);}to {transform: translateX(-2.7em);}`,
-    moveRight: keyframes`from {transform: translateX(-2.7em);} to {transform: translateX(0em);}`
 }
 
 const Letter = styled.span`
@@ -50,16 +46,7 @@ const Letter = styled.span`
 const LettersContainer = styled(Link)`
     position: relative;
     z-index: 2;
-
-    &:hover ${Letter} {
-        &:not(.fixed){
-            animation: ${animations.expand} 500ms ease-in-out forwards;
-        }
-
-        &.fixed.blue {
-            animation: ${animations.moveRight} 500ms ease-in-out forwards;
-        }
-    }
 `
 
 export default Logo
+export { Letter }
