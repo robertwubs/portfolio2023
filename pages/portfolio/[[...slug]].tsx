@@ -21,7 +21,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
         let tempObject: MenuItem[] | undefined = menuItems
         let fullSlug = ""
 
-        slug.forEach((item, idx) => {
+        slug.forEach(item => {
             if (tempObject) {
                 let foundItem = tempObject.filter(e => e.slug === `${fullSlug === "" ? fullSlug : fullSlug + "/"}${item}`)
                 if (foundItem.length > 0) {
@@ -31,6 +31,14 @@ export const getStaticProps: GetStaticProps = async (context) => {
             }
         })
         activeMenuItems = tempObject
+
+        if (activeMenuItems.filter(e => e.isBackButton === true).length === 0) {
+            activeMenuItems.unshift({
+                title: 'Back',
+                slug: `/portfolio/${slug.slice(0, -1).join('/')}`,
+                isBackButton: true
+            })
+        }
     }
 
     if (activeMenuItems.length === 0) {

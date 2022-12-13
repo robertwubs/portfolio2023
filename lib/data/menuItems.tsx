@@ -1,7 +1,8 @@
 export interface MenuItem {
     title: string
     slug: string
-    children?: Array<MenuItem>
+    children?: Array<MenuItem>,
+    isBackButton?: boolean
 }
 
 const menuItems = [
@@ -12,6 +13,14 @@ const menuItems = [
             {
                 title: 'whynow',
                 slug: 'websites/whynow'
+            } as MenuItem,
+            {
+                title: 'Wat mag ik wel',
+                slug: 'websites/wat-mag-ik-wel'
+            } as MenuItem,
+            {
+                title: 'milab',
+                slug: 'websites/milab'
             } as MenuItem
         ]
     } as MenuItem,

@@ -9,7 +9,7 @@ import defaultMenuItems, { MenuItem } from "lib/data/menuItems"
 import { PortfolioMenuItem } from "."
 
 interface MenuProps {
-    menuItems: MenuItem[],
+    menuItems?: MenuItem[],
     fromRouter?: boolean,
     activeSlug?: string | string[] | undefined
 }
@@ -28,11 +28,8 @@ const PortfolioMenu = ({ menuItems, fromRouter = true, activeSlug = '' }: MenuPr
 
     return <NoHorizScrollWrapper>
         <Wrapper>
-            {slug && Array.isArray(slug) && slug.length > 0 && <Link className="backBtn" href={`/portfolio/${slug.slice(0, -1).join('/')}`}>
-                Back
-            </Link>}
             {menuItems.map((item, idx) => {
-                return <PortfolioMenuItem key={`menu-item-${idx}`} item={item} />
+                return <PortfolioMenuItem key={`menu-item-${idx}`} item={item} index={idx} total={menuItems?.length} />
             })}
         </Wrapper>
     </NoHorizScrollWrapper>

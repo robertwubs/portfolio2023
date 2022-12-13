@@ -1,15 +1,43 @@
-import Link from "next/link"
-
 import styled from "styled-components"
 
 import { MenuItem } from "lib/data/menuItems"
 
+import { motion } from "framer-motion"
+import { useRouter } from "next/router"
+import { BaseSyntheticEvent } from "react"
+
 interface ItemProps {
-    item: MenuItem
+    item: MenuItem,
+    index: number,
+    total: number | undefined
 }
 
-const PortfolioMenuItem = ({ item }: ItemProps) => {
-    return <Wrapper href={item.children && item.children.length > 0 ? `/portfolio/${item.slug}` : `/projects/${item.slug.split('/')[item.slug.split('/').length - 1]}`}>
+const variants = {
+    hidden: { opacity: 0, translateX: '-100%', skew: '5deg' },
+    enter: { opacity: 1, translateX: '0%', skew: '-5deg' },
+    exit: { opacity: 0, translateX: '100%', skew: '5deg' }
+}
+
+const PortfolioMenuItem = ({ item, index, total = 0 }: ItemProps) => {
+    const router = useRouter()
+
+    const hideAndNavigate = (e: BaseSyntheticEvent) => {
+        e.preventDefault()
+
+        router.push(e.currentTarget.getAttribute('href'))
+    }
+
+    return <Wrapper
+        onClick={hideAndNavigate}
+        href={
+            item.isBackButton ?
+                item.slug :
+                item.children && item.children.length > 0 ? `/portfolio/${item.slug}` : `/projects/${item.slug.split('/')[item.slug.split('/').length - 1]}`
+        }
+        variants={variants} animate="enter" initial="hidden" exit="exit" transition={{ ease: 'easeInOut', duration: 0.2, delay: (total - index - 1) / 10 }}
+        key={`menu-item-${item.slug}-${index}`}
+        $isBackButton={item.isBackButton}
+    >
         <MenuItemTitle>{item.title}</MenuItemTitle>
         <AnimatedBackground src="/images/whynow_page.png" />
     </Wrapper>
@@ -39,7 +67,11 @@ const AnimatedBackground = styled.img`
     pointer-events: none;
 `
 
-const Wrapper = styled(Link)`
+interface WrapperProps {
+    $isBackButton: boolean | undefined
+}
+
+const Wrapper = styled(motion.a) <WrapperProps>`
     width: 100%;
     position: relative;
     z-index: 0;
@@ -54,8 +86,6 @@ const Wrapper = styled(Link)`
 
     flex: 1;
 
-    transform: skew(-5deg);
-
     * {
         transform: translateY(0) skew(5deg);
     }
@@ -63,6 +93,10 @@ const Wrapper = styled(Link)`
     img {
         transform: translateY(0) scale(1.4) skew(5deg);
     }
+
+    ${props => props.$isBackButton && `
+        max-width: 20vw;
+    `}
 
     &:hover {
         > ${MenuItemTitle} {
