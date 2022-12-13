@@ -68,7 +68,7 @@ const Overlay = styled.nav<OverlayProps>`
     align-items: center;
     justify-content: center;
 
-    transition: all 0.2s ease;
+    transition: opacity 0.2s ease;
 
     opacity: 0;
     pointer-events: none;

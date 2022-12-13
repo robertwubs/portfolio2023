@@ -28,13 +28,15 @@ interface HeaderWrapperProps {
 }
 
 const HeaderWrapper = styled.header<HeaderWrapperProps>`
-    padding: 1em;
+    padding: 16px;
+    height: 54px;
+    width: 100%;    
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    position: sticky;
+    position: fixed;
     left: 0;
     top: 0;
 
