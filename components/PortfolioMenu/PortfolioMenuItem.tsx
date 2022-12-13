@@ -5,6 +5,7 @@ import { MenuItem } from "lib/data/menuItems"
 import { motion } from "framer-motion"
 import { useRouter } from "next/router"
 import { BaseSyntheticEvent } from "react"
+import { device } from "lib/device"
 
 interface ItemProps {
     item: MenuItem,
@@ -95,7 +96,14 @@ const Wrapper = styled(motion.a) <WrapperProps>`
     }
 
     ${props => props.$isBackButton && `
-        max-width: 20vw;
+        max-height: calc(20vw + 100px);
+        max-width: none;
+
+        ${device.tablet}{
+            max-width: 20vw;
+            max-height: none;
+            padding-top: 0;
+        }
     `}
 
     &:hover {
