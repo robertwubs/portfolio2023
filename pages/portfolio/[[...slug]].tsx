@@ -3,14 +3,18 @@ import { GetStaticProps } from 'next'
 import PortfolioMenu from "components/PortfolioMenu"
 import menuItems, { MenuItem } from 'lib/data/menuItems'
 import PageTitle from 'components/PageTitle'
+import { useRouter } from 'next/router'
 
 interface PageProps {
     menuItems: MenuItem[]
 }
 
 const PortfolioPage = ({ menuItems }: PageProps) => {
+    const router = useRouter()
+    const lastSlug = Array.isArray(router.query.slug) && router.query.slug.length > 0 ? router.query.slug[router.query.slug.length - 1].replace('-', ' ').charAt(0).toUpperCase() + router.query.slug[router.query.slug.length - 1].slice(1) : null
+
     return <>
-        <PageTitle title="Portfolio" />
+        <PageTitle title={`Portfolio${lastSlug ? ' - ' + lastSlug : ''}`} />
         <PortfolioMenu menuItems={menuItems} />
     </>
 }

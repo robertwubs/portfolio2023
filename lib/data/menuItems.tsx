@@ -2,17 +2,20 @@ export interface MenuItem {
     title: string
     slug: string
     children?: Array<MenuItem>,
-    isBackButton?: boolean
+    isBackButton?: boolean,
+    backgroundImage?: string
 }
 
 const menuItems = [
     {
         title: 'Websites',
         slug: 'websites',
+        backgroundImage: 'bg_websites.png',
         children: [
             {
                 title: 'whynow',
-                slug: 'websites/whynow'
+                slug: 'websites/whynow',
+                backgroundImage: 'bg_whynow.png'
             } as MenuItem,
             {
                 title: 'Wat mag ik wel',
@@ -27,6 +30,7 @@ const menuItems = [
     {
         title: 'Apps',
         slug: 'apps',
+        backgroundImage: 'bg_apps.png',
         children: [
             {
                 title: 'whynow app',
@@ -37,6 +41,7 @@ const menuItems = [
     {
         title: 'Games',
         slug: 'games',
+        backgroundImage: 'bg_games.png',
         children: [
             {
                 title: 'Featheroak',

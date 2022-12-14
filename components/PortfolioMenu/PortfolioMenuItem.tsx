@@ -14,9 +14,9 @@ interface ItemProps {
 }
 
 const variants = {
-    hidden: { opacity: 0, translateX: '-100%', skew: '5deg' },
+    hidden: { opacity: 0, translateX: '-100%', skew: '-5deg' },
     enter: { opacity: 1, translateX: '0%', skew: '-5deg' },
-    exit: { opacity: 0, translateX: '100%', skew: '5deg' }
+    exit: { opacity: 0, translateX: '100%', skew: '-5deg' }
 }
 
 const PortfolioMenuItem = ({ item, index, total = 0 }: ItemProps) => {
@@ -40,7 +40,7 @@ const PortfolioMenuItem = ({ item, index, total = 0 }: ItemProps) => {
         $isBackButton={item.isBackButton}
     >
         <MenuItemTitle>{item.title}</MenuItemTitle>
-        <AnimatedBackground src="/images/whynow_page.png" />
+        <AnimatedBackground src={`/images/${item?.backgroundImage ? item.backgroundImage : `bg_whynow.png`}`} />
     </Wrapper>
 }
 
@@ -50,6 +50,7 @@ const MenuItemTitle = styled.p`
     transition: all 0.2s ease-in-out;
     white-space: pre-line;
     text-align: center;
+    text-shadow: 0px 0px 4px #000000;
 `
 
 const AnimatedBackground = styled.img`
@@ -59,7 +60,7 @@ const AnimatedBackground = styled.img`
     top: 0;
     left: 0;
 
-    opacity: 0.3;
+    opacity: 0.5;
     
     z-index: -1;
 
@@ -87,6 +88,13 @@ const Wrapper = styled(motion.a) <WrapperProps>`
 
     flex: 1;
 
+    border-bottom: 4px solid black;
+
+    ${device.tablet} {
+        border-bottom: 0;
+        border-right: 4px solid black;
+    }
+
     * {
         transform: translateY(0) skew(5deg);
     }
@@ -112,7 +120,7 @@ const Wrapper = styled(motion.a) <WrapperProps>`
         }
 
         > ${AnimatedBackground} {
-            opacity: 0.5;
+            opacity: 0.8;
             transition: opacity 0.2s ease-in-out, transform 40s linear;
             transform: translateY(-100%) scale(1.4) skew(5deg);
         }
