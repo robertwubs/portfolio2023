@@ -35,6 +35,14 @@ const menuItems = [
             {
                 title: 'whynow app',
                 slug: 'apps/whynow-app'
+            } as MenuItem,
+            {
+                title: 'Marvel Champions\nCompanion',
+                slug: 'apps/marvel-champions-companion'
+            } as MenuItem,
+            {
+                title: 'Trippi',
+                slug: 'apps/trippi'
             } as MenuItem
         ]
     } as MenuItem,

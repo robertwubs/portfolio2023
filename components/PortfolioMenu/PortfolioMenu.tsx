@@ -1,12 +1,9 @@
-import Link from "next/link"
 import { useRouter } from "next/router"
 
-import styled from "styled-components"
-
-import { device } from "lib/device"
 import defaultMenuItems, { MenuItem } from "lib/data/menuItems"
 
 import { PortfolioMenuItem } from "."
+import { NoHorizScrollWrapper, Wrapper } from "./_styled/PortfolioMenu.styled"
 
 interface MenuProps {
     menuItems?: MenuItem[],
@@ -34,45 +31,5 @@ const PortfolioMenu = ({ menuItems, fromRouter = true, activeSlug = '' }: MenuPr
         </Wrapper>
     </NoHorizScrollWrapper>
 }
-
-const NoHorizScrollWrapper = styled.div` 
-    width: 100vw;
-    overflow-x: hidden;
-
-    display: flex;
-    flex-direction: column;
-`
-
-const Wrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: stretch;
-
-    overflow: hidden;
-    background-color: black;
-
-    position: relative;
-    left: -30px;
-    width: calc(100% + 60px);
-    flex: 1;
-
-    ${device.tablet} {
-        flex-direction: row;
-    }
-
-    .backBtn {
-        flex: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding-right: 15px;
-        padding-left: 75px;
-
-        ${device.tablet} {
-            padding-top: 0;
-        }
-    }
-`
 
 export default PortfolioMenu

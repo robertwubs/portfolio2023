@@ -1,9 +1,8 @@
-import { animations } from 'lib/animations';
 import { useEffect, useState } from 'react';
 
-import styled from 'styled-components'
+import { HeaderWrapper } from './_styled/Header.styled';
 
-import Logo, { Letter, Title } from './Logo'
+import Logo from './Logo'
 import Menu from './Menu'
 
 const Header = () => {
@@ -23,58 +22,5 @@ const Header = () => {
         <Menu />
     </HeaderWrapper>
 }
-
-interface HeaderWrapperProps {
-    offset: number
-}
-
-const HeaderWrapper = styled.header<HeaderWrapperProps>`
-    padding: 16px;
-    height: 65px;
-    width: 100%;    
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    position: fixed;
-    left: 0;
-    top: 0;
-
-    background-color: transparent;
-    transition: all 0.2s ease;
-
-    z-index: 1;
-
-    .invert {
-        color: white;
-    }
-
-    ${props => props.offset > 20 && `
-        background-color: #f2f2f2;
-
-        .invert {
-            color: black;
-        }
-    `}
-
-    &:hover {
-        background-color: rgba(0,0,0,0.7);
-    }
-
-    &:hover ${Letter} {
-        &:not(.fixed){
-            animation: ${animations.expand} 350ms ease-in-out forwards;
-        }
-
-        &.fixed.blue {
-            animation: ${animations.moveRight} 500ms ease-in-out forwards;
-        }
-    }
-
-    &:hover ${Title} {
-        animation: ${animations.moveRightTitle} 500ms ease-in-out forwards;
-    }
-`
 
 export default Header

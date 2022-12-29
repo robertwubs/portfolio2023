@@ -1,13 +1,12 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons"
 
-import styled from "styled-components"
-import { colors } from "lib/colors"
 import { useState } from "react"
 
 import { AnimatePresence, motion } from "framer-motion"
 import Link from "next/link"
-import { device } from "lib/device"
+
+import { Button, MenuList, Overlay } from "./_styled/Menu.styled"
 
 const variants = {
     hidden: { opacity: 0, rotateY: '0deg' },
@@ -43,70 +42,5 @@ const Menu = () => {
         </Overlay>
     </>
 }
-
-interface OverlayProps {
-    visible: boolean
-}
-
-const Button = styled.button`
-    position: relative;
-    z-index: 2;
-    padding: 0;
-`
-
-const Overlay = styled.nav<OverlayProps>`
-    background-color: ${colors.black};
-
-    position: absolute;
-    left: 0;
-    top: 0;
-
-    width: 100vw;
-    height: 100vh;
-    padding: 15px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    transition: opacity 0.2s ease;
-
-    opacity: 0;
-    pointer-events: none;
-    z-index: 0;
-
-    ${props => props.visible && `
-        opacity: 1;
-        pointer-events: all;
-        z-index: 1;
-    `}
-`
-
-const MenuList = styled.ul`
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-
-    a {
-        display: inline-block;
-        text-align: center;
-        width: 100%;
-
-        font-size: 2em;
-        margin-bottom: 0.5em;
-        font-weight: bold;
-
-        transition: all 0.2s ease;
-        color: ${colors.white};
-
-        ${device.tablet} {
-            font-size: 3em;
-        }
-
-        &:hover {
-            color: ${colors.blue};
-        }
-    }
-`
 
 export default Menu
