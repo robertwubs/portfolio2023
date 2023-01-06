@@ -10,6 +10,10 @@ import { useRouter } from 'next/router'
 
 import { GlobalProvider } from 'lib/context/GlobalContext'
 
+import '@fortawesome/fontawesome-svg-core/styles.css'
+import { config } from '@fortawesome/fontawesome-svg-core'
+config.autoAddCss = false
+
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter()
 

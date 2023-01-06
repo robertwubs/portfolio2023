@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { animations } from 'lib/animations'
 
 import { Letter, Title } from './Logo.styled'
+import { vars } from 'lib/vars'
 
 interface HeaderWrapperProps {
     offset: number
@@ -10,7 +11,7 @@ interface HeaderWrapperProps {
 
 export const HeaderWrapper = styled.header<HeaderWrapperProps>`
     padding: 16px;
-    height: 65px;
+    height: ${vars.headerHeight};
     width: 100%;    
 
     display: flex;

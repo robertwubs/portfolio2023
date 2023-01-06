@@ -9,14 +9,14 @@ body {
 }
 
 a {
-  color: #282893;
+  color: #2f2fff;
   text-decoration: none;
   font-weight: bold;
   transition: all 0.2s ease;
 }
 
 a:hover {
-  color: #242486;
+  color: #2121cd;
 }
 
 * {
@@ -28,4 +28,8 @@ button {
   background-color: transparent;
   box-shadow: none;
   cursor: pointer;
+}
+
+table strong {
+  padding-right: 15px;
 }

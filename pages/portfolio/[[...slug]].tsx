@@ -91,7 +91,7 @@ export async function getStaticPaths() {
             ...addChildrenToPaths(paths, menuItems)
         ],
         fallback: false
-    };
+    }
 }
 
 export default PortfolioPage

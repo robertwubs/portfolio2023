@@ -25,7 +25,7 @@ const ContainerWrapper = styled.div`
     background-color: ${colors.black};
     color: ${colors.white};
 
-    > div:nth-child(2) {
+    > *:nth-child(2) {
         flex: 1;
     }
 `
