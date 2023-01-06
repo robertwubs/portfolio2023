@@ -24,6 +24,10 @@ const menuItems = [
             {
                 title: 'milab',
                 slug: 'websites/milab'
+            } as MenuItem,
+            {
+                title: 'Portfolio',
+                slug: 'websites/portfolio'
             } as MenuItem
         ]
     } as MenuItem,

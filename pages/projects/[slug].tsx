@@ -1,5 +1,8 @@
 import { GetStaticProps } from 'next'
 
+import Link from 'next/link'
+import Image from 'next/image'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft, faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
 
@@ -8,9 +11,8 @@ import Container from 'components/ui/Content/Container'
 
 import projects, { Project, SourceAvailable } from 'lib/data/projects'
 
-import { BottomWrapper, Breadcrumb, ImageWrapper, Pill, TopWrapper } from 'components/ui/Content'
-import Link from 'next/link'
-import Image from 'next/image'
+import { BottomWrapper, Breadcrumb, ImageWrapper, Pill, PillContainer, TopWrapper } from 'components/ui/Content'
+import DynamicIcon from 'components/ui/DynamicIcon'
 
 interface PageProps {
     project: Project
@@ -27,9 +29,13 @@ const ProjectPage = ({ project }: PageProps) => {
                 </Breadcrumb>
 
                 <h1>{project.title}</h1>
-                <div style={{ marginBottom: 26 }}>
-                    {project.technologies.map((tech, index) => <Pill key={`tech-${index}`}>{tech.name}</Pill>)}
-                </div>
+                <PillContainer>
+                    {project.technologies.map((tech, index) => {
+                        const [iconName, library] = tech.icon.split("|")
+
+                        return <Pill key={`tech-${index}`}><DynamicIcon size={16} iconName={iconName} library={library} style={{ marginRight: 5 }} /> {tech.name}</Pill>
+                    })}
+                </PillContainer>
 
                 <table style={{ fontSize: 13 }}>
                     <tbody>

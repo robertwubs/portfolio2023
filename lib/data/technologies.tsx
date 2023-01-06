@@ -6,22 +6,28 @@ export interface Technology {
 
 const technologies = {
     graphQL: {
-        name: "GraphQL"
+        name: "GraphQL",
+        icon: "SiGraphql|si"
     } as Technology,
     javascript: {
-        name: "JavaScript"
+        name: "JavaScript",
+        icon: "SiJavascript|si"
     } as Technology,
     nextJs: {
-        name: "NextJS"
+        name: "NextJS",
+        icon: "TbBrandNextjs|tb"
     } as Technology,
     react: {
         name: "React",
+        icon: "SiReact|si"
     } as Technology,
     web: {
-        name: "Web"
+        name: "Web",
+        icon: "SlGlobe|sl"
     } as Technology,
     wordpress: {
-        name: "Wordpress"
+        name: "Wordpress",
+        icon: "SiWordpress|si"
     } as Technology
 }
 

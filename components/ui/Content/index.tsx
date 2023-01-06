@@ -15,10 +15,21 @@ export const Breadcrumb = styled(Link)`
     }
 `
 
+export const PillContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    gap: 5px;
+    margin-bottom: 21px;
+`
+
 export const Pill = styled.span`
-    margin-right: 5px;
-    margin-bottom: 5px;
-    padding: 8px 15px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+
+    padding: 7px 10px;
 
     border-radius: 10px;
     background-color: ${colors.darkBlue};
@@ -27,6 +38,8 @@ export const Pill = styled.span`
     font-size: 11px;
     font-weight: bold;
     pointer-events: none;
+    
+    align-items: center;
 `
 
 export const TopWrapper = styled.div`
