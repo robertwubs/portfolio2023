@@ -19,7 +19,7 @@ const ContentContainer = ({ children, $padded }: ContainerProps) => {
         initial="hidden"
         animate="enter"
         exit="exit"
-        transition={{ type: 'linear' }}
+        transition={{ type: 'linear', exitDelay: 1 }}
         $padded={$padded || false}
     >
         {children}
