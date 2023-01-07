@@ -43,10 +43,10 @@ const ProjectPage = ({ project }: PageProps) => {
                             <td><strong>Role: </strong></td>
                             <td>{project.role}</td>
                         </tr>
-                        <tr>
+                        {project.url && <tr>
                             <td><strong>URL: </strong></td>
                             <td><Link href={project.url} target="_blank">{project.url} <FontAwesomeIcon icon={faArrowUpRightFromSquare} /> </Link></td>
-                        </tr>
+                        </tr>}
                         <tr>
                             <td><strong>Source Code: </strong></td>
                             <td>

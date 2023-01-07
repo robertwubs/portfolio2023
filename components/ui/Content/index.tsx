@@ -77,5 +77,6 @@ export const ImageWrapper = styled.div`
     ${device.tablet} {
         align-self: flex-start;
         margin-bottom: 0;
+        margin-left: 15px;
     }
 `
