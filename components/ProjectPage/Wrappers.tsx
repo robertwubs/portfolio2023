@@ -1,46 +1,8 @@
 import { colors } from "lib/colors"
 import { device } from "lib/device"
 import { vars } from "lib/vars"
-import Link from "next/link"
+
 import styled from "styled-components"
-
-export const Breadcrumb = styled(Link)`
-    color: ${colors.white};
-    font-size: 12px;
-
-    svg {
-        top: 0.8px;
-        position: relative;
-        margin-right: 5px;
-    }
-`
-
-export const PillContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-
-    gap: 5px;
-    margin-bottom: 21px;
-`
-
-export const Pill = styled.span`
-    align-items: center;
-    justify-content: center;
-    display: flex;
-
-    padding: 7px 10px;
-
-    border-radius: 10px;
-    background-color: ${colors.darkBlue};
-    color: ${colors.white};
-
-    font-size: 11px;
-    font-weight: bold;
-    pointer-events: none;
-    
-    align-items: center;
-`
 
 export const TopWrapper = styled.div`
     color: ${colors.white};
@@ -60,6 +22,15 @@ export const TopWrapper = styled.div`
 export const BottomWrapper = styled.div`
     padding: ${vars.contentPadding};
     padding-top: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    ${device.tablet} {
+        flex-direction: row;
+        justify-content: space-between;
+    }
 `
 
 export const ImageWrapper = styled.div`

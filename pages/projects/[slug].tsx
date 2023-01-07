@@ -1,17 +1,20 @@
 import { GetStaticProps } from 'next'
 
-import Link from 'next/link'
 import Image from 'next/image'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft, faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
 
+import projects, { Project } from 'lib/data/projects'
+
 import PageTitle from 'components/PageTitle'
+
+import InfoTable from 'components/ProjectPage/InfoTable'
+import PillContainer, { Pill } from 'components/ProjectPage/PillContainer'
+import { BottomWrapper, ImageWrapper, TopWrapper } from 'components/ProjectPage/Wrappers'
+import { Breadcrumb } from 'components/ProjectPage/Breadcrumb'
+
 import Container from 'components/ui/Content/Container'
-
-import projects, { Project, SourceAvailable } from 'lib/data/projects'
-
-import { BottomWrapper, Breadcrumb, ImageWrapper, Pill, PillContainer, TopWrapper } from 'components/ui/Content'
 import DynamicIcon from 'components/ui/DynamicIcon'
 
 interface PageProps {
@@ -37,37 +40,18 @@ const ProjectPage = ({ project }: PageProps) => {
                     })}
                 </PillContainer>
 
-                <table style={{ fontSize: 13 }}>
-                    <tbody>
-                        <tr>
-                            <td><strong>Role: </strong></td>
-                            <td>{project.role}</td>
-                        </tr>
-                        {project.url && <tr>
-                            <td><strong>URL: </strong></td>
-                            <td><Link href={project.url} target="_blank">{project.url} <FontAwesomeIcon icon={faArrowUpRightFromSquare} /> </Link></td>
-                        </tr>}
-                        <tr>
-                            <td><strong>Source Code: </strong></td>
-                            <td>
-                                {project.sourceAvailable === SourceAvailable.Yes && <Link href={project.sourceUrl} target="_blank">{project.sourceUrl}</Link>}
-                                {project.sourceAvailable === SourceAvailable.No && <span>Private</span>}
-                                {project.sourceAvailable === SourceAvailable.OnRequest && <Link href={project.sourceUrl} target="_blank">Request</Link>}
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <InfoTable project={project} />
             </div>
             <ImageWrapper>
-                <Image src={`/images/${project.image}`} alt={`${project.title} logo`} fill style={{ objectFit: 'contain', padding: 15 }} />
+                <Image src={`/images/logos/${project.image}`} alt={`${project.title} logo`} fill style={{ objectFit: 'contain', padding: 15 }} />
             </ImageWrapper>
         </TopWrapper>
         <BottomWrapper>
-            <>{project.description.map((line, index) => {
+            <div>{project.description.map((line, index) => {
                 return <p key={`project-${index}`}>
                     {line.text}
                 </p>
-            })}</>
+            })}</div>
         </BottomWrapper>
     </Container>
 }

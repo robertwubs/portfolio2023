@@ -38,7 +38,7 @@ const PortfolioMenuItem = ({ item, index, total = 0 }: ItemProps) => {
         $isBackButton={item.isBackButton}
     >
         <MenuItemTitle>{item.title}</MenuItemTitle>
-        {!item.isBackButton && <AnimatedBackground src={`/images/${item?.backgroundImage ? item.backgroundImage : `bg_whynow.png`}`} />}
+        {!item.isBackButton && <AnimatedBackground src={`/images/backgrounds/${item?.backgroundImage ? item.backgroundImage : `bg_whynow.png`}`} />}
     </Wrapper>
 }
 

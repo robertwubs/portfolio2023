@@ -1,4 +1,4 @@
 export const vars = {
-    headerHeight: "65px",
+    headerHeight: "64px",
     contentPadding: "25px"
 }
