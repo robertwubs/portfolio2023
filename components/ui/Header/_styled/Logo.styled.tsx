@@ -19,9 +19,9 @@ export const Title = styled.p`
 
 export const Letter = styled.span`
     color: black;
-    font-family: 'Lilita One';
+    font-family: 'Bowlby One SC';
     font-size: 2em;
-    letter-spacing: -1px;
+    letter-spacing: -0.5px;
     pointer-events: none;
     display: inline-block;
 

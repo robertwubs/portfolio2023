@@ -50,7 +50,7 @@ const IntroductionHero = () => {
                     animate="enter"
                     exit="exit"
                     transition={{ type: 'linear', delay: 0.7, exitDelay: 0, duration: 0.5 }}
-                >I'm a web developer with a designer’s mind. In my professional work I tend to combine the best of two worlds by developing high-end web solutions, whilst also making it look pretty. I have complete control over web languages like: Javascript, CSS, PHP, HTML5, and frameworks like React, NextJS and React Native.</motion.p>
+                >I'm a web developer with a designer's mind. In my professional work I tend to combine the best of two worlds by developing high-end web solutions, whilst also making it look pretty. I have complete control over web languages like: Javascript, CSS, PHP, HTML5, and frameworks like React, NextJS and React Native.</motion.p>
             </IntroductionHeroDetails>
         </IntroductionHeroWrapper>
         {/* <PortfolioMenu /> */}

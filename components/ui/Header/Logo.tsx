@@ -7,15 +7,15 @@ const Logo = () => {
 
     return <LettersContainer href="/">
         <Letter className="invert fixed">R</Letter>
-        <Letter className="invert">O</Letter>
-        <Letter className="invert">B</Letter>
-        <Letter className="invert">E</Letter>
-        <Letter className="invert">R</Letter>
-        <Letter className="invert">T</Letter>
+        <Letter className="invert">o</Letter>
+        <Letter className="invert">b</Letter>
+        <Letter className="invert">e</Letter>
+        <Letter className="invert">r</Letter>
+        <Letter className="invert">t</Letter>
         <Letter className="fixed blue">W</Letter>
-        <Letter className="blue">U</Letter>
-        <Letter className="blue">B</Letter>
-        <Letter className="blue">S</Letter>
+        <Letter className="blue">u</Letter>
+        <Letter className="blue">b</Letter>
+        <Letter className="blue">s</Letter>
         <Title>
             {pageTitle}
         </Title>
