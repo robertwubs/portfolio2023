@@ -22,8 +22,7 @@ const Menu = () => {
     const links = [
         { title: 'Home', url: '/' },
         { title: 'Portfolio', url: '/portfolio' },
-        { title: 'About Me', url: '/about-me' },
-        { title: 'Contact', url: 'contact' }
+        { title: 'Contact', url: '/#contact' }
     ]
 
     return <>

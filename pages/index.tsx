@@ -1,3 +1,4 @@
+import CTASection from 'components/Homepage/CTASection'
 import IntroductionHero from 'components/Homepage/IntroductionHero'
 import SkillsGrid from 'components/Homepage/SkillsGrid'
 import PageTitle from 'components/PageTitle'
@@ -13,9 +14,11 @@ export default function Home() {
     <SkillsGrid />
 
     <PortFolioHeaderWrapper>
+      <p>For more information <a href="/files/CV_RobertWubs.pdf" target="_blank">download my CV</a>. (Last updated: 02 Nov 2022)</p>
       <h2>Portfolio</h2>
     </PortFolioHeaderWrapper>
     <PortfolioMenu height="75vh" />
+    <CTASection />
   </>
 }
 
@@ -23,9 +26,16 @@ const PortFolioHeaderWrapper = styled.div`
   width: 100%;
   background-color: white;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   position: relative;
   top: -1px;
+  padding: 0 30px;
+
+  p {
+    color: ${colors.black};
+    font-size: 12px;
+  }
 
   h2 {
     text-align: center;
