@@ -71,6 +71,11 @@ const technologies = {
         icon: "IoFlashSharp|io",
         excludeInList: true
     } as Technology,
+    git: {
+        name: "Git",
+        icon: "SiGit|si",
+        excludeInList: false
+    } as Technology,
     adobePhotoshop: {
         name: "Adobe Photoshop",
         icon: "SiAdobephotoshop|si",

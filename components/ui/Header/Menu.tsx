@@ -21,8 +21,7 @@ const Menu = () => {
 
     const links = [
         { title: 'Home', url: '/' },
-        { title: 'Portfolio', url: '/portfolio' },
-        { title: 'Contact', url: '/#contact' }
+        { title: 'Portfolio', url: '/portfolio' }
     ]
 
     return <>

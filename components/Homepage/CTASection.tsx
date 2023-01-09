@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 const CTASection = () => {
-    return <CTASectionWrapper id="contact">
+    return <CTASectionWrapper>
         <h3>Interested in working with me?</h3>
         <p>Click <a href="mailto:info@robertwubs.com">here</a> to send me an email. Or alternatively call me at <a href="tel:+31651556720">+31651556720</a> during office hours (CET).</p>
     </CTASectionWrapper>
