@@ -1,6 +1,9 @@
-import DynamicIcon from "components/ui/DynamicIcon"
 import { motion } from "framer-motion"
+
 import technologies from "lib/data/technologies"
+
+import DynamicIcon from "components/ui/DynamicIcon"
+
 import { Grid, GridContainer, GridTitle, GridWrapper } from "./_styled/SkillsGrid.styled"
 
 const gridVariants = {

@@ -1,7 +1,8 @@
+import styled from "styled-components"
+
 import { colors } from "lib/colors"
 import { device } from "lib/device"
 import { vars } from "lib/vars"
-import styled from "styled-components"
 
 export const GridWrapper = styled.div`
     display: flex;

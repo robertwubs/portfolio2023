@@ -1,11 +1,14 @@
-import CTASection from 'components/Homepage/CTASection'
-import IntroductionHero from 'components/Homepage/IntroductionHero'
-import SkillsGrid from 'components/Homepage/SkillsGrid'
-import PageTitle from 'components/PageTitle'
-import PortfolioMenu from 'components/PortfolioMenu'
+import styled from 'styled-components'
+
 import { colors } from 'lib/colors'
 import { vars } from 'lib/vars'
-import styled from 'styled-components'
+
+import PageTitle from 'components/PageTitle'
+
+import IntroductionHero from 'components/Homepage/IntroductionHero'
+import SkillsGrid from 'components/Homepage/SkillsGrid'
+import PortfolioMenu from 'components/PortfolioMenu'
+import CTASection from 'components/Homepage/CTASection'
 
 export default function Home() {
   return <>

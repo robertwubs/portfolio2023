@@ -1,8 +1,9 @@
 import Image from 'next/image'
+import { motion } from 'framer-motion'
 
 import ContentContainer from "components/ui/Content/Container"
+
 import IntroductionHeroWrapper, { IntroductionHeroDetails, IntroductionHeroInner } from "./_styled/IntroductionHero.styled"
-import { motion } from 'framer-motion'
 
 const imageVariants = {
     hidden: { opacity: 0, rotateZ: -180, x: '-200' },

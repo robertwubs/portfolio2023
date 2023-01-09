@@ -3,16 +3,17 @@ import { GetStaticProps } from 'next'
 import Image from 'next/image'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowLeft, faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 
 import projects, { Project } from 'lib/data/projects'
 
-import PageTitle from 'components/PageTitle'
-
-import InfoTable from 'components/ProjectPage/InfoTable'
-import PillContainer, { Pill } from 'components/ProjectPage/PillContainer'
 import { BottomWrapper, ImageWrapper, TopWrapper } from 'components/ProjectPage/Wrappers'
 import { Breadcrumb } from 'components/ProjectPage/Breadcrumb'
+
+import PageTitle from 'components/PageTitle'
+import InfoTable from 'components/ProjectPage/InfoTable'
+import PillContainer, { Pill } from 'components/ProjectPage/PillContainer'
+
 
 import Container from 'components/ui/Content/Container'
 import DynamicIcon from 'components/ui/DynamicIcon'
