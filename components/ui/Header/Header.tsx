@@ -18,7 +18,7 @@ const Header = () => {
     }, [])
 
     return <HeaderWrapper offset={offset || 0}>
-        <Logo />
+        <Logo offset={offset || 0} />
         <Menu />
     </HeaderWrapper>
 }

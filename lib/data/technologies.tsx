@@ -2,129 +2,160 @@ export interface Technology {
     name: string
     type: string
     icon: string
+    excludeInList: boolean
 }
 
 const technologies = {
-    adobeFlash: {
-        name: "Adobe Flash",
-        icon: "IoFlashSharp|io"
-    } as Technology,
-    adobePhotoshop: {
-        name: "Adobe Photoshop",
-        icon: "SiAdobephotoshop|si"
-    } as Technology,
-    android: {
-        name: "Android",
-        icon: "DiAndroid|di"
-    } as Technology,
-    appDevelopment: {
-        name: "App Development",
-        icon: "CgSmartphone|cg"
-    } as Technology,
-    backEnd: {
-        name: "Back-end",
-        icon: "BsServer|bs"
-    } as Technology,
-    csharp: {
-        name: "C#",
-        icon: "TbCSharp|tb"
-    } as Technology,
-    expo: {
-        name: "Expo",
-        icon: "SiExpo|si"
-    } as Technology,
-    framerMotion: {
-        name: "Framer Motion",
-        icon: "SiFramer|si"
-    } as Technology,
-    frontEnd: {
-        name: "Front-end",
-        icon: "CgWebsite|cg"
-    } as Technology,
-    gameDevelopment: {
-        name: "Game Development",
-        icon: "IoGameController|io"
-    } as Technology,
-    graphQL: {
-        name: "GraphQL",
-        icon: "SiGraphql|si"
-    } as Technology,
-    ios: {
-        name: "iOS",
-        icon: "SiIos|si"
-    } as Technology,
-    java: {
-        name: "Java",
-        icon: "SiJava|si"
-    } as Technology,
     javascript: {
         name: "JavaScript",
-        icon: "SiJavascript|si"
-    } as Technology,
-    jquery: {
-        name: "jQuery",
-        icon: "SiJquery|si"
-    } as Technology,
-    mongoDB: {
-        name: "MongoDB",
-        icon: "SiMongodb|si"
-    } as Technology,
-    mySql: {
-        name: "MySQL",
-        icon: "SiMysql|si"
-    } as Technology,
-    nextJs: {
-        name: "NextJS",
-        icon: "TbBrandNextjs|tb"
-    } as Technology,
-    nodeJs: {
-        name: "NodeJS",
-        icon: "IoLogoNodejs|io"
-    } as Technology,
-    phonegap: {
-        name: "Phonegap",
-        icon: "DiPhonegap|di"
-    } as Technology,
-    php: {
-        name: "PHP",
-        icon: "SiPhp|si"
-    } as Technology,
-    python: {
-        name: "Python",
-        icon: "SiPython|si"
+        icon: "SiJavascript|si",
+        excludeInList: false
     } as Technology,
     react: {
         name: "React",
-        icon: "SiReact|si"
+        icon: "SiReact|si",
+        excludeInList: false
+    } as Technology,
+    nextJs: {
+        name: "NextJS",
+        icon: "TbBrandNextjs|tb",
+        excludeInList: false
+    } as Technology,
+    nodeJs: {
+        name: "NodeJS",
+        icon: "IoLogoNodejs|io",
+        excludeInList: false
     } as Technology,
     reactNative: {
         name: "React Native",
-        icon: "TbBrandReactNative|tb"
+        icon: "TbBrandReactNative|tb",
+        excludeInList: false
     } as Technology,
-    swift: {
-        name: "Swift",
-        icon: "SiSwift|si"
+    graphQL: {
+        name: "GraphQL",
+        icon: "SiGraphql|si",
+        excludeInList: false
     } as Technology,
     typescript: {
         name: "TypeScript",
-        icon: "SiTypescript|si"
+        icon: "SiTypescript|si",
+        excludeInList: false
     },
-    unity: {
-        name: "Unity",
-        icon: "SiUnity|si"
+    frontEnd: {
+        name: "Front-end",
+        icon: "CgWebsite|cg",
+        excludeInList: true
+    } as Technology,
+    backEnd: {
+        name: "Back-end",
+        icon: "BsServer|bs",
+        excludeInList: true
     } as Technology,
     web: {
         name: "Web Development",
-        icon: "SlGlobe|sl"
+        icon: "SlGlobe|sl",
+        excludeInList: true
     } as Technology,
     webApp: {
         name: "Web App",
-        icon: "MdWeb|md"
+        icon: "MdWeb|md",
+        excludeInList: true
     } as Technology,
     wordpress: {
         name: "Wordpress",
-        icon: "SiWordpress|si"
-    } as Technology
+        icon: "SiWordpress|si",
+        excludeInList: false
+    } as Technology,
+    adobeFlash: {
+        name: "Adobe Flash",
+        icon: "IoFlashSharp|io",
+        excludeInList: true
+    } as Technology,
+    adobePhotoshop: {
+        name: "Adobe Photoshop",
+        icon: "SiAdobephotoshop|si",
+        excludeInList: false
+    } as Technology,
+    android: {
+        name: "Android",
+        icon: "DiAndroid|di",
+        excludeInList: true
+    } as Technology,
+    appDevelopment: {
+        name: "App Development",
+        icon: "CgSmartphone|cg",
+        excludeInList: true
+    } as Technology,
+    csharp: {
+        name: "C#",
+        icon: "TbCSharp|tb",
+        excludeInList: false
+    } as Technology,
+    expo: {
+        name: "Expo",
+        icon: "SiExpo|si",
+        excludeInList: false
+    } as Technology,
+    framerMotion: {
+        name: "Framer Motion",
+        icon: "SiFramer|si",
+        excludeInList: false
+    } as Technology,
+    gameDevelopment: {
+        name: "Game Development",
+        icon: "IoGameController|io",
+        excludeInList: true
+    } as Technology,
+    ios: {
+        name: "iOS",
+        icon: "SiIos|si",
+        excludeInList: true
+    } as Technology,
+    java: {
+        name: "Java",
+        icon: "SiJava|si",
+        excludeInList: false
+    } as Technology,
+    jquery: {
+        name: "jQuery",
+        icon: "SiJquery|si",
+        excludeInList: false
+    } as Technology,
+    mongoDB: {
+        name: "MongoDB",
+        icon: "SiMongodb|si",
+        excludeInList: false
+    } as Technology,
+    mySql: {
+        name: "MySQL",
+        icon: "SiMysql|si",
+        excludeInList: false
+    } as Technology,
+    phonegap: {
+        name: "Phonegap",
+        icon: "DiPhonegap|di",
+        excludeInList: true
+    } as Technology,
+    php: {
+        name: "PHP",
+        icon: "SiPhp|si",
+        excludeInList: false
+    } as Technology,
+    python: {
+        name: "Python",
+        icon: "SiPython|si",
+        excludeInList: false
+    } as Technology,
+    swift: {
+        name: "Swift",
+        icon: "SiSwift|si",
+        excludeInList: true
+    } as Technology,
+    unity: {
+        name: "Unity",
+        icon: "SiUnity|si",
+        excludeInList: false
+    } as Technology,
 }
 
 export default technologies

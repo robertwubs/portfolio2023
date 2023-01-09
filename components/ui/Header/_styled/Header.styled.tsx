@@ -33,15 +33,18 @@ export const HeaderWrapper = styled.header<HeaderWrapperProps>`
 
     ${props => props.offset > 20 && `
         background-color: #f2f2f2;
+        border-bottom: 1px solid #e1e1e1;
 
         .invert {
             color: black;
         }
     `}
 
-    &:hover {
-        background-color: rgba(0,0,0,0.7);
-    }
+    ${props => props.offset < 20 && `
+        &:hover {
+            background-color: rgba(0,0,0,0.7);
+        }
+    `}
 
     &:hover ${Letter} {
         &:not(.fixed){

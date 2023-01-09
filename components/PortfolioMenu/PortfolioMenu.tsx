@@ -8,10 +8,11 @@ import { NoHorizScrollWrapper, Wrapper } from "./_styled/PortfolioMenu.styled"
 interface MenuProps {
     menuItems?: MenuItem[],
     fromRouter?: boolean,
-    activeSlug?: string | string[] | undefined
+    activeSlug?: string | string[] | undefined,
+    height?: string | boolean,
 }
 
-const PortfolioMenu = ({ menuItems, fromRouter = true, activeSlug = '' }: MenuProps) => {
+const PortfolioMenu = ({ menuItems, fromRouter = true, activeSlug = '', height = false }: MenuProps) => {
     let slug: string | string[] | undefined = activeSlug
 
     if (fromRouter) {
@@ -23,7 +24,7 @@ const PortfolioMenu = ({ menuItems, fromRouter = true, activeSlug = '' }: MenuPr
         menuItems = defaultMenuItems
     }
 
-    return <NoHorizScrollWrapper>
+    return <NoHorizScrollWrapper height={height}>
         <Wrapper>
             {menuItems.map((item, idx) => {
                 return <PortfolioMenuItem key={`menu-item-${idx}`} item={item} index={idx} total={menuItems?.length} />

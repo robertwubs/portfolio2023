@@ -13,7 +13,7 @@ const FooterWrapper = styled.footer`
     color: #c3c3c3;
     text-align: center;
     font-size: 12px;
-    letter-spacing: 1.6px;
+    letter-spacing: 0.3px;
 `
 
 export default Footer

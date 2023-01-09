@@ -15,11 +15,11 @@ const variants = {
 
 const ContentContainer = ({ children, $padded }: ContainerProps) => {
     return <ContentContainerWrapper
-        variants={variants}
-        initial="hidden"
-        animate="enter"
-        exit="exit"
-        transition={{ type: 'linear', exitDelay: 1 }}
+        // variants={variants}
+        // initial="hidden"
+        // animate="enter"
+        // exit="exit"
+        // transition={{ type: 'linear', exitDelay: 1 }}
         $padded={$padded || false}
     >
         {children}

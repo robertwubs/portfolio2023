@@ -2,12 +2,21 @@ import styled from 'styled-components'
 
 import { device } from 'lib/device'
 
-export const NoHorizScrollWrapper = styled.div` 
+interface WrapperProps {
+    height: string | boolean
+}
+
+export const NoHorizScrollWrapper = styled.div<WrapperProps>` 
     width: 100vw;
+    max-width: 100%;
     overflow-x: hidden;
 
     display: flex;
     flex-direction: column;
+
+    ${props => props.height && `
+        min-height: ${props.height};
+    `}
 `
 
 export const Wrapper = styled.div`

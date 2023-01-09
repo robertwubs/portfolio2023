@@ -2,7 +2,11 @@
 import { useGlobalContext } from "lib/context/GlobalContext"
 import { Letter, LettersContainer, Title } from "./_styled/Logo.styled"
 
-const Logo = () => {
+interface LogoProps {
+    offset: number
+}
+
+const Logo = ({ offset }: LogoProps) => {
     const { pageTitle } = useGlobalContext()
 
     return <LettersContainer href="/">
@@ -16,7 +20,7 @@ const Logo = () => {
         <Letter className="blue">u</Letter>
         <Letter className="blue">b</Letter>
         <Letter className="blue">s</Letter>
-        <Title>
+        <Title offset={offset}>
             {pageTitle}
         </Title>
     </LettersContainer>

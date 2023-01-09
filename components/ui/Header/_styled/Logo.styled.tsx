@@ -5,7 +5,11 @@ import { colors } from "lib/colors"
 
 import styled from 'styled-components'
 
-export const Title = styled.p`
+interface TitleProps {
+    offset: number
+}
+
+export const Title = styled.p<TitleProps>`
     color: white;
     padding-left: 15px;
     display: block;
@@ -15,6 +19,10 @@ export const Title = styled.p`
 
     animation: ${animations.moveLeftTitle} 500ms ease-in-out forwards;
     animation-delay: 2s;
+    
+    ${props => props.offset > 20 && `
+        color: black;
+    `}
 `
 
 export const Letter = styled.span`
@@ -25,16 +33,16 @@ export const Letter = styled.span`
     pointer-events: none;
     display: inline-block;
 
-    &.blue {
+        &.blue {
         color: ${colors.blue};
     }
 
-    &:not(.fixed){
+        &: not(.fixed){
         animation: ${animations.shrink} 350ms ease-in-out forwards;
         animation-delay: 2s;
     }
 
-    &.fixed.blue {
+        &.fixed.blue {
         animation: ${animations.moveLeft} 500ms ease-in-out forwards;
         animation-delay: 2s;
     }
