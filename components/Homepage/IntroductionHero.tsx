@@ -17,7 +17,7 @@ const textVariants = {
 }
 
 const IntroductionHero = () => {
-    return <ContentContainer $padded={true}>
+    return <ContentContainer $padded={true} $animated={false}>
         <IntroductionHeroWrapper>
             <IntroductionHeroInner>
                 <motion.div

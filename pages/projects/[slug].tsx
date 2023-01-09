@@ -22,7 +22,7 @@ interface PageProps {
 }
 
 const ProjectPage = ({ project }: PageProps) => {
-    return <Container $padded={true}>
+    return <Container $padded={true} $animated={true} $flexed={true}>
         <PageTitle title={`Project: ${project.title}`} />
 
         <TopWrapper>

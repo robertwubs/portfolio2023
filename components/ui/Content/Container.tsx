@@ -5,6 +5,8 @@ import { motion } from 'framer-motion'
 interface ContainerProps {
     children: JSX.Element | JSX.Element[],
     $padded?: boolean
+    $animated?: boolean,
+    $flexed?: boolean
 }
 
 const variants = {
@@ -13,14 +15,21 @@ const variants = {
     exit: { opacity: 0, x: 0, y: -100 },
 }
 
-const ContentContainer = ({ children, $padded }: ContainerProps) => {
+const off = {
+    hidden: { opacity: 1 },
+    enter: { opacity: 1 },
+    exit: { opacity: 1 },
+}
+
+const ContentContainer = ({ children, $padded, $animated = false, $flexed = false }: ContainerProps) => {
     return <ContentContainerWrapper
-        // variants={variants}
-        // initial="hidden"
-        // animate="enter"
-        // exit="exit"
-        // transition={{ type: 'linear', exitDelay: 1 }}
+        variants={$animated ? variants : off}
+        initial="hidden"
+        animate="enter"
+        exit="exit"
+        transition={{ type: 'linear', exitDelay: 1 }}
         $padded={$padded || false}
+        $flexed={$flexed || false}
     >
         {children}
     </ContentContainerWrapper>
@@ -28,6 +37,7 @@ const ContentContainer = ({ children, $padded }: ContainerProps) => {
 
 interface ContentContainerWrapperProps {
     $padded: boolean
+    $flexed: boolean
 }
 
 const ContentContainerWrapper = styled(motion.main) <ContentContainerWrapperProps>`
@@ -36,6 +46,10 @@ const ContentContainerWrapper = styled(motion.main) <ContentContainerWrapperProp
 
     ${props => props.$padded && `
         margin-top: ${vars.headerHeight};
+    `}
+
+    ${props => props.$flexed && `
+        flex: 1;
     `}
 `
 

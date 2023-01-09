@@ -24,7 +24,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <Container>
       <AnimatePresence
         mode="wait"
-        onExitComplete={() => window.scrollTo(0, 0)}
+        onExitComplete={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
       >
         <Component {...pageProps} key={router.asPath} />
       </AnimatePresence>
