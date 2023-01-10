@@ -70,7 +70,7 @@ const projects = [
         ]
     } as Project,
     {
-        //Watmagikwel.nl
+        //Ditmagikwel.nl
         title: 'Dit mag ik wel',
         slug: 'dit-mag-ik-wel',
         url: null,
@@ -98,7 +98,11 @@ const projects = [
             technologies.backEnd,
             technologies.frontEnd,
         ],
-        sourceAvailable: SourceAvailable.No
+        sourceAvailable: SourceAvailable.No,
+        galleryImages: [
+            "wmiw_01.png",
+            "wmiw_02.png"
+        ]
     } as Project,
     {
         //Milab
@@ -144,7 +148,7 @@ const projects = [
             title: 'Websites',
             slug: 'websites'
         },
-        image: 'whynow.png',
+        image: 'portfolio.png',
         description: [
             {
                 text: "This is paragraph 1",
@@ -197,7 +201,13 @@ const projects = [
             technologies.java,
             technologies.appDevelopment,
         ],
-        sourceAvailable: SourceAvailable.No
+        sourceAvailable: SourceAvailable.No,
+        galleryImages: [
+            "whynow_app_01.webp",
+            "whynow_app_02.webp",
+            "whynow_app_03.webp",
+            "whynow_app_04.webp"
+        ]
     } as Project,
     {
         //marvelChampions
@@ -208,7 +218,7 @@ const projects = [
             title: 'Apps',
             slug: 'apps'
         },
-        image: 'whynow.png',
+        image: 'mc.png',
         description: [
             {
                 text: "This is paragraph 1",

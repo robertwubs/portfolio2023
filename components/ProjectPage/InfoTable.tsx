@@ -25,7 +25,7 @@ const InfoTable = ({ project }: InfoTableProps) => {
                 <td>
                     {project.sourceAvailable === SourceAvailable.Yes && <Link href={project.sourceUrl} target="_blank">{project.sourceUrl}</Link>}
                     {project.sourceAvailable === SourceAvailable.No && <span>Private</span>}
-                    {project.sourceAvailable === SourceAvailable.OnRequest && <Link href={project.sourceUrl} target="_blank">Request</Link>}
+                    {project.sourceAvailable === SourceAvailable.OnRequest && <Link href={'#'} target="_blank">Request</Link>}
                 </td>
             </tr>
         </tbody>
