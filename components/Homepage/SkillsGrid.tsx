@@ -12,12 +12,24 @@ const gridVariants = {
     exit: { opacity: 0, y: -40 },
 }
 
+const textVariants = {
+    hidden: { opacity: 0, x: -40 },
+    enter: { opacity: 1, x: 0 },
+    exit: { opacity: 0, x: -40 },
+}
+
 const SkillsGrid = () => {
     return <>
         <GridWrapper>
             <GridContainer>
                 <GridTitle>
-                    <h2>Skills</h2>
+                    <motion.h2
+                        variants={gridVariants}
+                        initial="hidden"
+                        animate="enter"
+                        exit="exit"
+                        transition={{ type: 'easeInOut', duration: 0.3 }}
+                    >Skills</motion.h2>
                 </GridTitle>
                 <Grid>
                     {Object.values(technologies).map((tech, index) => {
