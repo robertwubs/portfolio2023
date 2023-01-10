@@ -41,6 +41,26 @@ const technologies = {
         icon: "SiTypescript|si",
         excludeInList: false
     },
+    css3: {
+        name: "CSS3",
+        icon: "SiCss3|si",
+        excludeInList: false
+    },
+    html5: {
+        name: "HTML5",
+        icon: "SiHtml5|si",
+        excludeInList: false
+    },
+    ruby: {
+        name: "Ruby",
+        icon: "SiRuby|si",
+        excludeInList: false
+    },
+    rubyOnRails: {
+        name: "RubyOnRails",
+        icon: "SiRubyonrails|si",
+        excludeInList: false
+    },
     frontEnd: {
         name: "Front-end",
         icon: "CgWebsite|cg",

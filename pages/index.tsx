@@ -18,6 +18,7 @@ export default function Home() {
 
     <PortFolioHeaderWrapper>
       <p>For more information <a href="/files/CV_RobertWubs.pdf" target="_blank">download my CV</a>. (Last updated: 02 Nov 2022)</p>
+      <p>Want more insight in my coding style? Click <a href="https://github.com" target="_blank">here</a> to view the source code of this portfolio.</p>
       <h2>Portfolio</h2>
     </PortFolioHeaderWrapper>
     <PortfolioMenu height="75vh" />

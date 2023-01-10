@@ -3,7 +3,7 @@ import { CgWebsite, CgSmartphone } from 'react-icons/cg'
 import { DiAndroid, DiPhonegap } from 'react-icons/di'
 import { IoLogoNodejs, IoGameController, IoFlashSharp } from 'react-icons/io5'
 import { MdWeb } from 'react-icons/md'
-import { SiGraphql, SiJavascript, SiReact, SiWordpress, SiJquery, SiFramer, SiMongodb, SiUnity, SiJava, SiExpo, SiAdobephotoshop, SiPython, SiIos, SiSwift, SiMysql, SiPhp, SiTypescript, SiGit } from "react-icons/si"
+import { SiGraphql, SiJavascript, SiReact, SiWordpress, SiJquery, SiFramer, SiMongodb, SiUnity, SiJava, SiExpo, SiAdobephotoshop, SiPython, SiIos, SiSwift, SiHtml5, SiRuby, SiRubyonrails, SiMysql, SiPhp, SiTypescript, SiGit, SiCss3 } from "react-icons/si"
 import { TbBrandNextjs, TbBrandReactNative, TbCSharp } from "react-icons/tb"
 import { SlGlobe } from "react-icons/sl"
 
@@ -45,7 +45,11 @@ export const icons = {
         SiMysql,
         SiPhp,
         SiTypescript,
-        SiGit
+        SiGit,
+        SiCss3,
+        SiHtml5,
+        SiRubyonrails,
+        SiRuby
     },
     sl: {
         SlGlobe
