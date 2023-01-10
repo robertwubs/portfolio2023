@@ -50,9 +50,7 @@ const ProjectPage = ({ project }: PageProps) => {
         </TopWrapper>
         <BottomWrapper>
             <div>{project.description.map((line, index) => {
-                return <p key={`project-${index}`}>
-                    {line.text}
-                </p>
+                return <p key={`project-${index}`}>{line}</p>
             })}</div>
             <Gallery project={project} />
         </BottomWrapper>

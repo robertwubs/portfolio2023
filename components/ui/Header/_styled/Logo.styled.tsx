@@ -4,6 +4,7 @@ import { animations } from 'lib/animations'
 import { colors } from "lib/colors"
 
 import styled from 'styled-components'
+import { device } from 'lib/device'
 
 interface TitleProps {
     offset: number
@@ -16,9 +17,17 @@ export const Title = styled.p<TitleProps>`
     margin: 0;
     pointer-events: none;
     font-weight: bolder;
+    white-space: nowrap;
 
     animation: ${animations.moveLeftTitle} 500ms ease-in-out forwards;
     animation-delay: 2s;
+
+    font-size: 12px;
+
+    ${device.tablet}{
+        animation: ${animations.moveLeftTitleDesktop} 500ms ease-in-out forwards;
+        font-size: 16px;
+    }
     
     ${props => props.offset > 20 && `
         color: black;
@@ -53,4 +62,9 @@ export const LettersContainer = styled(Link)`
     z-index: 2;
     display: flex;
     align-items: center;
+    max-width: 82vw;
+
+    ${device.tablet}{
+        max-width: none;
+    }
 `

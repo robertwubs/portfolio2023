@@ -190,12 +190,13 @@ const SliderStyle = styled.div`
     
     .keen-slider {
         transition: height 0.3s;
+        border-radius: 5px;
     }
     
     .keen-slider .keen-slider__slide {
         min-height: auto !important;
         min-width: 100% !important;
-        max-width: 100% !important; 
+        max-width: 100% !important;
     }
 
     .galleryImage {

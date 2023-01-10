@@ -4,6 +4,7 @@ import { animations } from 'lib/animations'
 
 import { Letter, Title } from './Logo.styled'
 import { vars } from 'lib/vars'
+import { device } from 'lib/device'
 
 interface HeaderWrapperProps {
     offset: number
@@ -58,5 +59,9 @@ export const HeaderWrapper = styled.header<HeaderWrapperProps>`
 
     &:hover ${Title} {
         animation: ${animations.moveRightTitle} 500ms ease-in-out forwards;
+
+        ${device.tablet}{
+            animation: ${animations.moveRightTitleDesktop} 500ms ease-in-out forwards;
+        }
     }
 `

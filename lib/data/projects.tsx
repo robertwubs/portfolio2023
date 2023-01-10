@@ -8,7 +8,7 @@ export interface Project {
     image: string
     sourceUrl: string
     sourceAvailable: SourceAvailable
-    description: ProjectDescriptionLine[]
+    description: string[]
     category: ProjectCategory,
     technologies: Technology[],
     galleryImages: string[]
@@ -17,11 +17,6 @@ export interface Project {
 export interface ProjectCategory {
     title: string
     slug: string
-}
-
-export interface ProjectDescriptionLine {
-    title?: string
-    text: string
 }
 
 export enum SourceAvailable {
@@ -43,13 +38,8 @@ const projects = [
         },
         image: 'whynow.png',
         description: [
-            {
-                text: "This is paragraph 1",
-            },
-            {
-                title: "This is here",
-                text: "I did this and this here"
-            }
+            "This is paragraph 1",
+            "I did this and this here"
         ],
         role: "Senior Full Stack Web Developer",
         technologies: [
@@ -80,13 +70,8 @@ const projects = [
         },
         image: 'wmiw.png',
         description: [
-            {
-                text: "This is paragraph 1",
-            },
-            {
-                title: "This is here",
-                text: "I did this and this here"
-            }
+            "This is paragraph 1",
+            "I did this and this here"
         ],
         role: "Sole Developer",
         technologies: [
@@ -115,13 +100,8 @@ const projects = [
         },
         image: 'milab.png',
         description: [
-            {
-                text: "This is paragraph 1",
-            },
-            {
-                title: "This is here",
-                text: "I did this and this here"
-            }
+            "This is paragraph 1",
+            "I did this and this here"
         ],
         role: "Sole Developer",
         technologies: [
@@ -150,13 +130,8 @@ const projects = [
         },
         image: 'portfolio.png',
         description: [
-            {
-                text: "This is paragraph 1",
-            },
-            {
-                title: "This is here",
-                text: "I did this and this here"
-            }
+            "This is paragraph 1",
+            "I did this and this here"
         ],
         role: "Sole Developer",
         technologies: [
@@ -169,27 +144,22 @@ const projects = [
             technologies.frontEnd,
         ],
         sourceAvailable: SourceAvailable.Yes,
-        sourceUrl: '-'
+        sourceUrl: 'https://github.com/robertwubs/portfolio2023'
     } as Project,
     //APPS
     {
         //whynow app
         title: 'whynow app',
         slug: 'whynow-app',
-        url: 'https://whynow.co.ukhttps://play.google.com/store/apps/details?id=com.whynowmobile',
+        url: 'https://play.google.com/store/apps/details?id=com.whynowmobile',
         category: {
             title: 'Apps',
             slug: 'apps'
         },
         image: 'whynow.png',
         description: [
-            {
-                text: "This is paragraph 1",
-            },
-            {
-                title: "This is here",
-                text: "I did this and this here"
-            }
+            "This is paragraph 1",
+            "I did this and this here"
         ],
         role: "Senior Full Stack Web Developer",
         technologies: [
@@ -220,13 +190,9 @@ const projects = [
         },
         image: 'mc.png',
         description: [
-            {
-                text: "This is paragraph 1",
-            },
-            {
-                title: "This is here",
-                text: "I did this and this here"
-            }
+            "Marvel Champions is a physical card game, produced by Fantasy Flight Games and licensed by Marvel. The game features thousands of different cards with which the player can create their own decks. I wanted to make it easier to create decks and keep track of gameplay progression by creating a companion app.",
+            "The app was created with React Native, powered by Expo and written in JavaScript. All data regarding cards and other elements of the game are pulled from the public MarvelCDB API. Users can search for cards and view their information; create and share decks; view decks that other people have posted; track campaign progress; edit their card collection and much more.",
+            "After having conversations with fellow developers who had a similar idea, I decided not to publish the app for legal reasons. However, I still use it personally during my play session."
         ],
         role: "Sole Developer",
         technologies: [
@@ -235,7 +201,11 @@ const projects = [
             technologies.javascript,
             technologies.appDevelopment,
         ],
-        sourceAvailable: SourceAvailable.OnRequest
+        sourceAvailable: SourceAvailable.OnRequest,
+        galleryImages: [
+            "mc_01.jpg",
+            "mc_02.jpg"
+        ]
     } as Project,
     {
         //Trippi
@@ -248,13 +218,8 @@ const projects = [
         },
         image: 'trippi.jpg',
         description: [
-            {
-                text: "This is paragraph 1",
-            },
-            {
-                title: "This is here",
-                text: "I did this and this here"
-            }
+            "Trippi was a start-up, founded in 2015 by me and two friends. We sold polymer figurines whose goal was to travel the world by being passed along from person to person. Each user who received a Trippi could scan it on their phone, after which they could see its journey; the people it met; challenges it completed and more.",
+            "The application was built in Apache Cordova (then Phonegap), using jQuery for the front-end and a custom PHP+MySQL back-end. It is currently no longer online.",
         ],
         role: "Founder & Full Stack Developer",
         technologies: [
@@ -285,13 +250,8 @@ const projects = [
         },
         image: 'whynow.png',
         description: [
-            {
-                text: "This is paragraph 1",
-            },
-            {
-                title: "This is here",
-                text: "I did this and this here"
-            }
+            "This is paragraph 1",
+            "I did this and this here"
         ],
         role: "Founder & Full Stack Developer",
         technologies: [
@@ -313,13 +273,8 @@ const projects = [
         },
         image: 'twiins.jpg',
         description: [
-            {
-                text: "This is paragraph 1",
-            },
-            {
-                title: "This is here",
-                text: "I did this and this here"
-            }
+            "This is paragraph 1",
+            "I did this and this here"
         ],
         role: "Founder & Full Stack Developer",
         technologies: [
@@ -345,13 +300,8 @@ const projects = [
         },
         image: 'little_princess.jpg',
         description: [
-            {
-                text: "This is paragraph 1",
-            },
-            {
-                title: "This is here",
-                text: "I did this and this here"
-            }
+            "This is paragraph 1",
+            "I did this and this here"
         ],
         role: "Founder & Full Stack Developer",
         technologies: [

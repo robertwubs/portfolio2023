@@ -5,6 +5,9 @@ import { vars } from "lib/vars"
 import styled from "styled-components"
 
 export const TopWrapper = styled.div`
+    position: relative;
+    top: -1px;
+
     color: ${colors.white};
     background-color: ${colors.black};
     padding: ${vars.contentPadding};
@@ -26,6 +29,10 @@ export const BottomWrapper = styled.div`
     display: flex;
     flex-direction: column;
     gap: 15px;
+
+    p {
+        letter-spacing: -0.3px;
+    }
 
     ${device.tablet} {
         flex-direction: row;
