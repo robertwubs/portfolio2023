@@ -22,7 +22,7 @@ const menuItems = [
                 slug: 'websites/wat-mag-ik-wel'
             } as MenuItem,
             {
-                title: 'milab',
+                title: 'miLab',
                 slug: 'websites/milab'
             } as MenuItem,
             {
@@ -38,15 +38,18 @@ const menuItems = [
         children: [
             {
                 title: 'whynow app',
-                slug: 'apps/whynow-app'
+                slug: 'apps/whynow-app',
+                backgroundImage: 'bg_whynow_app.png'
             } as MenuItem,
             {
                 title: 'Marvel Champions\nCompanion',
-                slug: 'apps/marvel-champions-companion'
+                slug: 'apps/marvel-champions-companion',
+                backgroundImage: 'bg_marvel_champions.png'
             } as MenuItem,
             {
                 title: 'Trippi',
-                slug: 'apps/trippi'
+                slug: 'apps/trippi',
+                backgroundImage: 'bg_trippi.png'
             } as MenuItem
         ]
     } as MenuItem,

@@ -45,7 +45,7 @@ const ProjectPage = ({ project }: PageProps) => {
                 <InfoTable project={project} />
             </div>
             <ImageWrapper>
-                <Image src={`/images/logos/${project.image}`} alt={`${project.title} logo`} fill style={{ objectFit: 'contain', padding: 15 }} />
+                <Image priority sizes="150px" src={`/images/logos/${project.image}`} alt={`${project.title} logo`} fill style={{ objectFit: 'contain', padding: 15 }} />
             </ImageWrapper>
         </TopWrapper>
         <BottomWrapper>

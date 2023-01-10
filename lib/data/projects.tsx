@@ -41,7 +41,7 @@ const projects = [
             title: 'Websites',
             slug: 'websites'
         },
-        image: 'logo_whynow.png',
+        image: 'whynow.png',
         description: [
             {
                 text: "This is paragraph 1",
@@ -78,7 +78,7 @@ const projects = [
             title: 'Websites',
             slug: 'websites'
         },
-        image: 'logo_whynow.png',
+        image: 'wmiw.png',
         description: [
             {
                 text: "This is paragraph 1",
@@ -102,14 +102,14 @@ const projects = [
     } as Project,
     {
         //Milab
-        title: 'Milab',
+        title: 'miLab',
         slug: 'milab',
         url: null,
         category: {
             title: 'Websites',
             slug: 'websites'
         },
-        image: 'logo_whynow.png',
+        image: 'milab.png',
         description: [
             {
                 text: "This is paragraph 1",
@@ -128,7 +128,12 @@ const projects = [
             technologies.backEnd,
             technologies.frontEnd,
         ],
-        sourceAvailable: SourceAvailable.No
+        sourceAvailable: SourceAvailable.No,
+        galleryImages: [
+            "milab_01.png",
+            "milab_02.png",
+            "milab_03.png",
+        ]
     } as Project,
     {
         //Portfolio
@@ -139,7 +144,7 @@ const projects = [
             title: 'Websites',
             slug: 'websites'
         },
-        image: 'logo_whynow.png',
+        image: 'whynow.png',
         description: [
             {
                 text: "This is paragraph 1",
@@ -172,7 +177,7 @@ const projects = [
             title: 'Apps',
             slug: 'apps'
         },
-        image: 'logo_whynow.png',
+        image: 'whynow.png',
         description: [
             {
                 text: "This is paragraph 1",
@@ -203,7 +208,7 @@ const projects = [
             title: 'Apps',
             slug: 'apps'
         },
-        image: 'logo_whynow.png',
+        image: 'whynow.png',
         description: [
             {
                 text: "This is paragraph 1",
@@ -231,7 +236,7 @@ const projects = [
             title: 'Apps',
             slug: 'apps'
         },
-        image: 'logo_whynow.png',
+        image: 'trippi.jpg',
         description: [
             {
                 text: "This is paragraph 1",
@@ -250,7 +255,13 @@ const projects = [
             technologies.php,
             technologies.appDevelopment,
         ],
-        sourceAvailable: SourceAvailable.No
+        sourceAvailable: SourceAvailable.No,
+        galleryImages: [
+            "trippi_01.png",
+            "trippi_02.png",
+            "trippi_03.jpg",
+            "trippi_04.jpg"
+        ]
     } as Project,
     //GAMES
     {
@@ -262,7 +273,7 @@ const projects = [
             title: 'Games',
             slug: 'games'
         },
-        image: 'logo_whynow.png',
+        image: 'whynow.png',
         description: [
             {
                 text: "This is paragraph 1",
@@ -290,7 +301,7 @@ const projects = [
             title: 'Games',
             slug: 'games'
         },
-        image: 'logo_whynow.png',
+        image: 'twiins.jpg',
         description: [
             {
                 text: "This is paragraph 1",
@@ -306,7 +317,12 @@ const projects = [
             technologies.adobePhotoshop,
             technologies.gameDevelopment,
         ],
-        sourceAvailable: SourceAvailable.No
+        sourceAvailable: SourceAvailable.No,
+        galleryImages: [
+            "twiins_01.png",
+            "twiins_02.png",
+            "twiins_03.png",
+        ]
     } as Project,
     {
         //LittlePrincess
@@ -317,7 +333,7 @@ const projects = [
             title: 'Games',
             slug: 'games'
         },
-        image: 'logo_whynow.png',
+        image: 'little_princess.jpg',
         description: [
             {
                 text: "This is paragraph 1",
@@ -334,7 +350,11 @@ const projects = [
             technologies.adobePhotoshop,
             technologies.gameDevelopment,
         ],
-        sourceAvailable: SourceAvailable.No
+        sourceAvailable: SourceAvailable.No,
+        galleryImages: [
+            "little_princess_01.jpg",
+            "little_princess_02.jpg"
+        ]
     } as Project,
 ]
 

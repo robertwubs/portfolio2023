@@ -24,7 +24,7 @@ const PortfolioMenu = ({ menuItems, fromRouter = true, activeSlug = '', height =
         menuItems = defaultMenuItems
     }
 
-    return <NoHorizScrollWrapper height={height}>
+    return <NoHorizScrollWrapper $height={height}>
         <Wrapper>
             {menuItems.map((item, idx) => {
                 return <PortfolioMenuItem key={`menu-item-${idx}`} item={item} index={idx} total={menuItems?.length} />

@@ -28,7 +28,7 @@ const IntroductionHero = () => {
                     exit="exit"
                     transition={{ type: 'easeInOut', delay: 0, duration: 1 }}
                 >
-                    <Image src="/images/avatar.jpg" alt="Avatar" width="200" height="200" />
+                    <Image priority src="/images/avatar.jpg" alt="Avatar" width="200" height="200" />
                 </motion.div>
                 <IntroductionHeroDetails>
                     <motion.h1

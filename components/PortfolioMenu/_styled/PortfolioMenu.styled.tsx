@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { device } from 'lib/device'
 
 interface WrapperProps {
-    height: string | boolean
+    $height: string | boolean
 }
 
 export const NoHorizScrollWrapper = styled.div<WrapperProps>` 
@@ -14,8 +14,8 @@ export const NoHorizScrollWrapper = styled.div<WrapperProps>`
     display: flex;
     flex-direction: column;
 
-    ${props => props.height && `
-        min-height: ${props.height};
+    ${props => props.$height && `
+        min-height: ${props.$height};
     `}
 `
 

@@ -15,8 +15,11 @@ interface GalleryProps {
 
 const AdaptiveHeight: KeenSliderPlugin = (slider) => {
     function updateHeight() {
-        const slideHeight = slider.slides[slider.track.details.rel]?.firstChild as HTMLImageElement
-        slider.container.style.height = slideHeight.offsetHeight + "px"
+        setTimeout(() => {
+            const slideHeight = slider.slides[slider.track.details.rel]?.firstChild as HTMLImageElement
+
+            slider.container.style.height = slideHeight.offsetHeight + "px"
+        }, 100)
     }
     slider.on("created", updateHeight)
     slider.on("updated", updateHeight)
@@ -29,6 +32,7 @@ const Gallery = ({ project }: GalleryProps) => {
     const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
         {
             initial: 0,
+            loop: true,
             slideChanged(s) {
                 setCurrentSlide(s.track.details.rel)
             },
@@ -44,8 +48,8 @@ const Gallery = ({ project }: GalleryProps) => {
             <div className="navigation-wrapper">
                 <div ref={sliderRef} className="keen-slider">
                     {project.galleryImages.map((image, index) => {
-                        return <div className="keen-slider__slide">
-                            <Image onLoad={() => instanceRef.current?.update()} src={`/images/gallery/${image}`} alt={`${project.title} image ${index}`} fill className="galleryImage" />
+                        return <div key={`gallery-image-${image}-${index}`} className="keen-slider__slide">
+                            <Image sizes="60vw" priority onLoad={() => instanceRef.current?.update()} src={`/images/gallery/${image}`} alt={`${project.title} image ${index}`} fill className="galleryImage" />
                         </div>
                     })}
                 </div>
