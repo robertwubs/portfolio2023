@@ -10,7 +10,8 @@ export interface Project {
     sourceAvailable: SourceAvailable
     description: ProjectDescriptionLine[]
     category: ProjectCategory,
-    technologies: Technology[]
+    technologies: Technology[],
+    galleryImages: string[]
 }
 
 export interface ProjectCategory {

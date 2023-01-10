@@ -36,21 +36,21 @@ const IntroductionHero = () => {
                         initial="hidden"
                         animate="enter"
                         exit="exit"
-                        transition={{ type: 'linear', delay: 0.3, exitDelay: 0, duration: 0.5 }}
+                        transition={{ type: 'linear', delay: 0.2, exitDelay: 0.2, duration: 0.5 }}
                     >Hi, I'm Robert!</motion.h1>
                     <motion.h2
                         variants={textVariants}
                         initial="hidden"
                         animate="enter"
                         exit="exit"
-                        transition={{ type: 'linear', delay: 0.5, exitDelay: 0, duration: 0.5 }}
+                        transition={{ type: 'linear', delay: 0.2, exitDelay: 0.2, duration: 0.5 }}
                     >Full Stack Web Developer</motion.h2>
                     <motion.p
                         variants={textVariants}
                         initial="hidden"
                         animate="enter"
                         exit="exit"
-                        transition={{ type: 'linear', delay: 0.7, exitDelay: 0, duration: 0.5 }}
+                        transition={{ type: 'linear', delay: 0.4, exitDelay: 0, duration: 0.5 }}
                     >I'm a web developer with a designer's mind. In my professional work I tend to combine the best of two worlds by developing high-end web solutions, whilst also making it look pretty. I have complete control over web languages like: Javascript, CSS, PHP, HTML5, and frameworks like React, NextJS and React Native.</motion.p>
                 </IntroductionHeroDetails>
             </IntroductionHeroInner>
