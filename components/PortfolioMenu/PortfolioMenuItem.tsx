@@ -23,7 +23,7 @@ const PortfolioMenuItem = ({ item, index, total = 0 }: ItemProps) => {
     const hideAndNavigate = (e: BaseSyntheticEvent) => {
         e.preventDefault()
 
-        router.push(e.currentTarget.getAttribute('href'))
+        router.push(e.currentTarget.getAttribute('href'), undefined, { shallow: true })
     }
 
     return <Wrapper

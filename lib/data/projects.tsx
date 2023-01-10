@@ -71,8 +71,8 @@ const projects = [
     } as Project,
     {
         //Watmagikwel.nl
-        title: 'Wat mag ik wel',
-        slug: 'wat-mag-ik-wel',
+        title: 'Dit mag ik wel',
+        slug: 'dit-mag-ik-wel',
         url: null,
         category: {
             title: 'Websites',

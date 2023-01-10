@@ -18,16 +18,19 @@ const menuItems = [
                 backgroundImage: 'bg_whynow.png'
             } as MenuItem,
             {
-                title: 'Wat mag ik wel',
-                slug: 'websites/wat-mag-ik-wel'
+                title: 'Dit mag ik wel',
+                slug: 'websites/dit-mag-ik-wel',
+                backgroundImage: 'bg_wmiw.png'
             } as MenuItem,
             {
                 title: 'miLab',
-                slug: 'websites/milab'
+                slug: 'websites/milab',
+                backgroundImage: 'bg_milab.png'
             } as MenuItem,
             {
                 title: 'Portfolio',
-                slug: 'websites/portfolio'
+                slug: 'websites/portfolio',
+                backgroundImage: 'bg_portfolio.png'
             } as MenuItem
         ]
     } as MenuItem,
@@ -60,15 +63,18 @@ const menuItems = [
         children: [
             {
                 title: 'Featheroak',
-                slug: 'games/featheroak'
+                slug: 'games/featheroak',
+                backgroundImage: 'bg_games.png'
             } as MenuItem,
             {
                 title: 'Twiins',
-                slug: 'games/twiins'
+                slug: 'games/twiins',
+                backgroundImage: 'bg_twiins.png'
             } as MenuItem,
             {
                 title: `Little\nPrincess`,
-                slug: 'games/little-princess'
+                slug: 'games/little-princess',
+                backgroundImage: 'bg_little_princess.png'
             } as MenuItem
         ]
     } as MenuItem
