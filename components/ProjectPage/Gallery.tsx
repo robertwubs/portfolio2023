@@ -1,0 +1,215 @@
+import { useState } from "react"
+
+import styled from "styled-components"
+
+import "keen-slider/keen-slider.min.css"
+import { useKeenSlider, KeenSliderPlugin } from "keen-slider/react"
+
+import { Project } from "lib/data/projects"
+import { colors } from "lib/colors"
+
+interface GalleryProps {
+    project: Project
+}
+
+const AdaptiveHeight: KeenSliderPlugin = (slider) => {
+    function updateHeight() {
+        slider.container.style.height =
+            slider.slides[slider.track.details.rel].offsetHeight + "px"
+    }
+    slider.on("created", updateHeight)
+    slider.on("slideChanged", updateHeight)
+}
+
+const Gallery = ({ project }: GalleryProps) => {
+    const [currentSlide, setCurrentSlide] = useState(0)
+    const [loaded, setLoaded] = useState(false)
+    const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
+        {
+            initial: 0,
+            slideChanged(s) {
+                setCurrentSlide(s.track.details.rel)
+            },
+            created() {
+                setLoaded(true)
+            },
+        },
+        [AdaptiveHeight]
+    )
+
+    return <SliderStyle>
+        <div className="navigation-wrapper">
+            <div ref={sliderRef} className="keen-slider">
+                <div className="keen-slider__slide number-slide1">1</div>
+                <div
+                    className="keen-slider__slide number-slide2"
+                    style={{ height: 100 }}
+                >
+                    2
+                </div>
+                <div
+                    className="keen-slider__slide number-slide3"
+                    style={{ height: 150 }}
+                >
+                    3
+                </div>
+                <div className="keen-slider__slide number-slide4">4</div>
+                <div
+                    className="keen-slider__slide number-slide5"
+                    style={{ height: 75 }}
+                >
+                    5
+                </div>
+                <div
+                    className="keen-slider__slide number-slide6"
+                    style={{ height: 100 }}
+                >
+                    6
+                </div>
+            </div>
+        </div>
+        {loaded && instanceRef.current && <>
+            <Arrow
+                left
+                onClick={(e: any) =>
+                    e.stopPropagation() || instanceRef.current?.prev()
+                }
+                disabled={currentSlide === 0}
+            />
+
+            <Arrow
+                onClick={(e: any) =>
+                    e.stopPropagation() || instanceRef.current?.next()
+                }
+                disabled={
+                    currentSlide ===
+                    instanceRef.current.track.details.slides.length - 1
+                }
+            />
+        </>}
+        {loaded && instanceRef.current && (
+            <div className="dots">
+                {[
+                    ...Array(instanceRef.current.track.details.slides.length).keys(),
+                ].map((idx) => {
+                    return (
+                        <button
+                            key={idx}
+                            onClick={() => {
+                                instanceRef.current?.moveToIdx(idx)
+                            }}
+                            className={"dot" + (currentSlide === idx ? " active" : "")}
+                        ></button>
+                    )
+                })}
+            </div>
+        )}
+    </SliderStyle>
+}
+
+function Arrow(props: {
+    disabled: boolean
+    left?: boolean
+    onClick: (e: any) => void
+}) {
+    const disabled = props.disabled ? " arrow--disabled" : ""
+    return (
+        <svg
+            onClick={props.onClick}
+            className={`arrow ${props.left ? "arrow--left" : "arrow--right"
+                } ${disabled}`}
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+        >
+            {props.left && (
+                <path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z" />
+            )}
+            {!props.left && (
+                <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
+            )}
+        </svg>
+    )
+}
+
+const SliderStyle = styled.div`
+    position: relative;
+
+    [class^="number-slide"],
+    [class*=" number-slide"] {
+        background: grey;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 50px;
+        color: #fff;
+        font-weight: 500;
+        height: 200px;
+        max-height: 100vh;
+    }
+
+    .arrow {
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        bottom: 0;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        fill: ${colors.black};
+        cursor: pointer;
+    }
+    
+    .arrow--left {
+        left: 0;
+    }
+    
+    .arrow--right {
+        left: auto;
+        right: 0px;
+    }
+    
+    .arrow--disabled {
+        fill: rgba(0,0,0, 0.5);
+    }
+    
+    .navigation-wrapper {
+        position: relative;
+    }
+    
+    .dots {
+        display: flex;
+        padding: 10px 0;
+        justify-content: center;
+    }
+    
+    .dot {
+        border: none;
+        width: 10px;
+        height: 10px;
+        background: #c5c5c5;
+        border-radius: 50%;
+        margin: 0 5px;
+        padding: 5px;
+        cursor: pointer;
+    }
+    
+    .dot:focus {
+        outline: none;
+    }
+    
+    .dot.active {
+        background: #000;
+    }
+    
+    .keen-slider {
+        transition: height 0.3s;
+    }
+    
+    .keen-slider .keen-slider__slide {
+        min-height: auto !important;
+        min-width: 100% !important;
+        max-width: 100% !important; 
+    }
+
+`
+
+export default Gallery

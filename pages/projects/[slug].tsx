@@ -17,6 +17,7 @@ import PillContainer, { Pill } from 'components/ProjectPage/PillContainer'
 
 import Container from 'components/ui/Content/Container'
 import DynamicIcon from 'components/ui/DynamicIcon'
+import Gallery from 'components/ProjectPage/Gallery'
 
 interface PageProps {
     project: Project
@@ -53,6 +54,7 @@ const ProjectPage = ({ project }: PageProps) => {
                     {line.text}
                 </p>
             })}</div>
+            <Gallery project={project} />
         </BottomWrapper>
     </Container>
 }

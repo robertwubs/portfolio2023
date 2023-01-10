@@ -30,6 +30,19 @@ export const BottomWrapper = styled.div`
     ${device.tablet} {
         flex-direction: row;
         justify-content: space-between;
+        
+        > div:first-child {
+            flex-basis: 60%;
+            min-width: 60%;
+            margin-top: 10px;
+        }
+
+        > div:last-child {
+            flex-basis: 40%;
+            max-width: 40%;
+            position: relative;
+            margin-top: 25px;
+        }
     }
 `
 
