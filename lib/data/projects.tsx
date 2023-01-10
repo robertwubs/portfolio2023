@@ -61,7 +61,13 @@ const projects = [
             technologies.mySql,
             technologies.web,
         ],
-        sourceAvailable: SourceAvailable.No
+        sourceAvailable: SourceAvailable.No,
+        galleryImages: [
+            "whynow_01.png",
+            "whynow_02.png",
+            "whynow_03.png",
+            "whynow_04.png"
+        ]
     } as Project,
     {
         //Watmagikwel.nl

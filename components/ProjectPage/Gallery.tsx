@@ -7,6 +7,7 @@ import { useKeenSlider, KeenSliderPlugin } from "keen-slider/react"
 
 import { Project } from "lib/data/projects"
 import { colors } from "lib/colors"
+import Image from "next/image"
 
 interface GalleryProps {
     project: Project
@@ -14,10 +15,11 @@ interface GalleryProps {
 
 const AdaptiveHeight: KeenSliderPlugin = (slider) => {
     function updateHeight() {
-        slider.container.style.height =
-            slider.slides[slider.track.details.rel].offsetHeight + "px"
+        const slideHeight = slider.slides[slider.track.details.rel]?.firstChild as HTMLImageElement
+        slider.container.style.height = slideHeight.offsetHeight + "px"
     }
     slider.on("created", updateHeight)
+    slider.on("updated", updateHeight)
     slider.on("slideChanged", updateHeight)
 }
 
@@ -32,78 +34,60 @@ const Gallery = ({ project }: GalleryProps) => {
             },
             created() {
                 setLoaded(true)
-            },
+            }
         },
         [AdaptiveHeight]
     )
 
     return <SliderStyle>
-        <div className="navigation-wrapper">
-            <div ref={sliderRef} className="keen-slider">
-                <div className="keen-slider__slide number-slide1">1</div>
-                <div
-                    className="keen-slider__slide number-slide2"
-                    style={{ height: 100 }}
-                >
-                    2
-                </div>
-                <div
-                    className="keen-slider__slide number-slide3"
-                    style={{ height: 150 }}
-                >
-                    3
-                </div>
-                <div className="keen-slider__slide number-slide4">4</div>
-                <div
-                    className="keen-slider__slide number-slide5"
-                    style={{ height: 75 }}
-                >
-                    5
-                </div>
-                <div
-                    className="keen-slider__slide number-slide6"
-                    style={{ height: 100 }}
-                >
-                    6
+        {project.galleryImages && project.galleryImages.length > 0 && <>
+            <div className="navigation-wrapper">
+                <div ref={sliderRef} className="keen-slider">
+                    {project.galleryImages.map((image, index) => {
+                        return <div className="keen-slider__slide">
+                            <Image onLoad={() => instanceRef.current?.update()} src={`/images/gallery/${image}`} alt={`${project.title} image ${index}`} fill className="galleryImage" />
+                        </div>
+                    })}
                 </div>
             </div>
-        </div>
-        {loaded && instanceRef.current && <>
-            <Arrow
-                left
-                onClick={(e: any) =>
-                    e.stopPropagation() || instanceRef.current?.prev()
-                }
-                disabled={currentSlide === 0}
-            />
+            {loaded && instanceRef.current && <>
+                <Arrow
+                    left
+                    onClick={(e: any) =>
+                        e.stopPropagation() || instanceRef.current?.prev()
+                    }
+                    disabled={currentSlide === 0}
+                />
 
-            <Arrow
-                onClick={(e: any) =>
-                    e.stopPropagation() || instanceRef.current?.next()
-                }
-                disabled={
-                    currentSlide ===
-                    instanceRef.current.track.details.slides.length - 1
-                }
-            />
+                <Arrow
+                    onClick={(e: any) =>
+                        e.stopPropagation() || instanceRef.current?.next()
+                    }
+                    disabled={
+                        currentSlide ===
+                        instanceRef.current.track.details.slides.length - 1
+                    }
+                />
+            </>}
+            {loaded && instanceRef.current && (
+                <div className="dots">
+                    {[
+                        ...Array(instanceRef.current.track.details.slides.length).keys(),
+                    ].map((idx) => {
+                        return (
+                            <button
+                                key={idx}
+                                onClick={() => {
+                                    instanceRef.current?.moveToIdx(idx)
+                                }}
+                                className={"dot" + (currentSlide === idx ? " active" : "")}
+                            ></button>
+                        )
+                    })}
+                </div>
+            )}
         </>}
-        {loaded && instanceRef.current && (
-            <div className="dots">
-                {[
-                    ...Array(instanceRef.current.track.details.slides.length).keys(),
-                ].map((idx) => {
-                    return (
-                        <button
-                            key={idx}
-                            onClick={() => {
-                                instanceRef.current?.moveToIdx(idx)
-                            }}
-                            className={"dot" + (currentSlide === idx ? " active" : "")}
-                        ></button>
-                    )
-                })}
-            </div>
-        )}
+
     </SliderStyle>
 }
 
@@ -210,6 +194,10 @@ const SliderStyle = styled.div`
         max-width: 100% !important; 
     }
 
+    .galleryImage {
+        position: unset !important;
+        height: auto !important;
+    }
 `
 
 export default Gallery
