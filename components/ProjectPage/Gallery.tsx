@@ -7,7 +7,8 @@ import { useKeenSlider, KeenSliderPlugin } from "keen-slider/react"
 
 import { Project } from "lib/data/projects"
 import { colors } from "lib/colors"
-import Image from "next/image"
+
+import ShimmeredImage from "components/ShimmeredImage"
 
 interface GalleryProps {
     project: Project
@@ -49,7 +50,7 @@ const Gallery = ({ project }: GalleryProps) => {
                 <div ref={sliderRef} className="keen-slider">
                     {project.galleryImages.map((image, index) => {
                         return <div key={`gallery-image-${image}-${index}`} className="keen-slider__slide">
-                            <Image sizes="60vw" priority onLoad={() => instanceRef.current?.update()} src={`/images/gallery/${image}`} alt={`${project.title} image ${index}`} fill className="galleryImage" />
+                            <ShimmeredImage $shimmerHeight={500} $shimmerWidth={500} sizes="60vw" priority onLoad={() => instanceRef.current?.update()} src={`/images/gallery/${image}`} alt={`${project.title} image ${index}`} fill className="galleryImage" />
                         </div>
                     })}
                 </div>

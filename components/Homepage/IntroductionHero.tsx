@@ -1,6 +1,6 @@
-import Image from 'next/image'
 import { motion } from 'framer-motion'
 
+import ShimmeredImage from 'components/ShimmeredImage'
 import ContentContainer from "components/ui/Content/Container"
 
 import IntroductionHeroWrapper, { IntroductionHeroDetails, IntroductionHeroInner } from "./_styled/IntroductionHero.styled"
@@ -28,7 +28,7 @@ const IntroductionHero = () => {
                     exit="exit"
                     transition={{ type: 'easeInOut', delay: 0, duration: 1 }}
                 >
-                    <Image priority src="/images/avatar.jpg" alt="Avatar" width="200" height="200" />
+                    <ShimmeredImage $shimmerHeight={200} $shimmerWidth={200} priority src="/images/avatar.jpg" alt="Avatar" width="200" height="200" />
                 </motion.div>
                 <IntroductionHeroDetails>
                     <motion.h1

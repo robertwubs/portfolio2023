@@ -1,9 +1,9 @@
 import { GetStaticProps } from 'next'
 
-import Image from 'next/image'
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
+
+import parse from 'html-react-parser'
 
 import projects, { Project } from 'lib/data/projects'
 
@@ -11,6 +11,7 @@ import { BottomWrapper, ImageWrapper, TopWrapper } from 'components/ProjectPage/
 import { Breadcrumb } from 'components/ProjectPage/Breadcrumb'
 
 import PageTitle from 'components/PageTitle'
+import ShimmeredImage from 'components/ShimmeredImage'
 import InfoTable from 'components/ProjectPage/InfoTable'
 import PillContainer, { Pill } from 'components/ProjectPage/PillContainer'
 
@@ -18,8 +19,6 @@ import PillContainer, { Pill } from 'components/ProjectPage/PillContainer'
 import Container from 'components/ui/Content/Container'
 import DynamicIcon from 'components/ui/DynamicIcon'
 import Gallery from 'components/ProjectPage/Gallery'
-
-import parse from 'html-react-parser'
 
 interface PageProps {
     project: Project
@@ -47,7 +46,7 @@ const ProjectPage = ({ project }: PageProps) => {
                 <InfoTable project={project} />
             </div>
             <ImageWrapper>
-                <Image priority sizes="150px" src={`/images/logos/${project.image}`} alt={`${project.title} logo`} fill style={{ objectFit: 'contain', padding: 15 }} />
+                <ShimmeredImage $shimmerHeight={150} $shimmerWidth={150} priority sizes="150px" src={`/images/logos/${project.image}`} alt={`${project.title} logo`} fill style={{ objectFit: 'contain', padding: 15 }} />
             </ImageWrapper>
         </TopWrapper>
         <BottomWrapper>

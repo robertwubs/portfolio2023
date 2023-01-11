@@ -33,3 +33,7 @@ button {
 table strong {
   padding-right: 15px;
 }
+
+.shimmered-image {
+  background-image: none !important;
+}
