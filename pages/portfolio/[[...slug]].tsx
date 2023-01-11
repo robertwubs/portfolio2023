@@ -30,7 +30,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
         let fullSlug = ""
 
         slug.forEach(item => {
-            if (tempObject) {
+            if (tempObject && tempObject !== undefined) {
                 let foundItem = tempObject.filter(e => e.slug === `${fullSlug === "" ? fullSlug : fullSlug + "/"}${item}`)
                 if (foundItem.length > 0) {
                     tempObject = foundItem[0]?.children
@@ -40,7 +40,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
         })
         activeMenuItems = tempObject
 
-        if (activeMenuItems.filter(e => e.isBackButton === true).length === 0) {
+        if (activeMenuItems !== undefined && activeMenuItems.filter(e => e.isBackButton === true).length === 0) {
             activeMenuItems.unshift({
                 title: 'Back',
                 slug: `/portfolio/${slug.slice(0, -1).join('/')}`,
@@ -49,7 +49,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
         }
     }
 
-    if (activeMenuItems.length === 0) {
+    if (activeMenuItems === undefined || activeMenuItems.length === 0) {
         return {
             notFound: true
         }
