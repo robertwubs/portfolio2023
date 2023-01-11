@@ -12,7 +12,7 @@ const PageTitle = ({ title }: PageTitleProps) => {
 
     useEffect(() => {
         setPageTitle(title)
-    }, [title])
+    }, [title, setPageTitle])
 
     return <Head>
         <title>{`Robert Wubs | ${title}`}</title>

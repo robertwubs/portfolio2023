@@ -38,8 +38,9 @@ const projects = [
         },
         image: 'whynow.png',
         description: [
-            "This is paragraph 1",
-            "I did this and this here"
+            "whynow is a digital media company, focusing on delivering positive news surrounding the arts. I worked at whynow for four years as a Senior Full Stack Web Developer, leading a small team of developers remotely.",
+            "During my time at whynow I was responsible for the main website (<a href='https://whynow.co.uk' target='_blank' rel='noreferrer'>https://whynow.co.uk</a>), which was built in NextJS, relying on Wordpress as a back-end. Besides making key decisions about the architecture, I also reviewed and tested all code-submissions before packaging and deploying updates.",
+            "Other projects that I have worked on for whynow include a dedicated mobile app (see <a href='/projects/whynow-app'>here</a>), eCommerce store and custom server functionality written in NodeJS."
         ],
         role: "Senior Full Stack Web Developer",
         technologies: [
@@ -49,6 +50,7 @@ const projects = [
             technologies.wordpress,
             technologies.php,
             technologies.mySql,
+            technologies.nodeJs,
             technologies.web,
         ],
         sourceAvailable: SourceAvailable.No,
@@ -70,8 +72,10 @@ const projects = [
         },
         image: 'wmiw.png',
         description: [
-            "This is paragraph 1",
-            "I did this and this here"
+            "My sister-in-law had always dreamed of owning her own recipe-website, so in 2021 I decided to make this dream a reality. I created Dit Mag Ik Wel (translates to: 'This I'm Allowed To Eat') as a birthday present, but also as a way to practice new technologies.",
+            "Ditmagikwel.nl allowed users with specific allergies or disorders to define what they are allowed to eat. The website would then show filtered results based on their preferences and allow recipe-writers to define alternatives for certain ingredients.",
+            "The front-end was created in NextJS and React, while the back-end was a custom-built NodeJS server, utilizing Express, GraphQL, MongoDB and Mongoose.",
+            "My sister-in-law appreciated the website a lot but has since given birth to a beautiful girl. Hence, the site is currently offline."
         ],
         role: "Sole Developer",
         technologies: [
@@ -100,14 +104,14 @@ const projects = [
         },
         image: 'milab.png',
         description: [
-            "This is paragraph 1",
-            "I did this and this here"
+            "During my time at Trippi (see <a href='/projects/trippi'>here</a>) we worked at an incubator office called iLab. Multiple young start-ups worked here while benefiting of the vast network of companies that were aligned with the initiative. All start-ups however communicated through a WhatsApp group and there was no centralized directory of resources that iLab could provide. Hence, they hired me to create one.",
+            "miLab was created as a lightweight social media platform where users could post updates for all to see, schedule events, browse resources available to them and send direct messages. The site was created with Ruby On Rails, with animations provided by jQuery."
         ],
         role: "Sole Developer",
         technologies: [
             technologies.jquery,
-            technologies.php,
-            technologies.mySql,
+            technologies.ruby,
+            technologies.rubyOnRails,
             technologies.webApp,
             technologies.backEnd,
             technologies.frontEnd,
@@ -118,33 +122,6 @@ const projects = [
             "milab_02.png",
             "milab_03.png",
         ]
-    } as Project,
-    {
-        //Portfolio
-        title: 'Portfolio',
-        slug: 'portfolio',
-        url: 'https://robertwubs.com',
-        category: {
-            title: 'Websites',
-            slug: 'websites'
-        },
-        image: 'portfolio.png',
-        description: [
-            "This is paragraph 1",
-            "I did this and this here"
-        ],
-        role: "Sole Developer",
-        technologies: [
-            technologies.nextJs,
-            technologies.react,
-            technologies.typescript,
-            technologies.framerMotion,
-            technologies.adobePhotoshop,
-            technologies.web,
-            technologies.frontEnd,
-        ],
-        sourceAvailable: SourceAvailable.Yes,
-        sourceUrl: 'https://github.com/robertwubs/portfolio2023'
     } as Project,
     //APPS
     {
@@ -158,12 +135,13 @@ const projects = [
         },
         image: 'whynow.png',
         description: [
-            "This is paragraph 1",
-            "I did this and this here"
+            "During my work at whynow (see <a href='/projects/whynow'>here</a>) I created multiple versions of a dedicated app which delivered all content to mobile phones. Three iterations of this app were created over the years:",
+            "The first iteration was a pure React Native app, sporting its own design differing from the main site. The second iteration was the same app, converted to use Expo in order to utilize the power of over-the-air updates. The third and final iteration was two native apps (Android & iOS) which loaded in the main website in a WebView, while also adding features specific to the mobile version like notifications and signing in with Apple."
         ],
         role: "Senior Full Stack Web Developer",
         technologies: [
             technologies.reactNative,
+            technologies.javascript,
             technologies.expo,
             technologies.android,
             technologies.ios,
@@ -248,19 +226,23 @@ const projects = [
             title: 'Games',
             slug: 'games'
         },
-        image: 'whynow.png',
+        image: 'featheroak.png',
         description: [
-            "This is paragraph 1",
-            "I did this and this here"
+            "Featheroak is a fantasy trading card game I developed in Unity. Players create decks and fight opponents using over 500 different hexagon-shaped cards on a hexagonal grid.",
+            "The game is written entirely in C# and all art is generated by Midjourney AI and retouched by me in Photoshop. It is currently a work-in-progress, though a demo can be requested."
         ],
-        role: "Founder & Full Stack Developer",
+        role: "Sole Game Developer",
         technologies: [
             technologies.unity,
             technologies.csharp,
             technologies.adobePhotoshop,
             technologies.gameDevelopment,
         ],
-        sourceAvailable: SourceAvailable.OnRequest
+        sourceAvailable: SourceAvailable.OnRequest,
+        galleryImages: [
+            "featheroak_01.png",
+            "featheroak_02.jpg"
+        ]
     } as Project,
     {
         //Twiins
@@ -273,10 +255,10 @@ const projects = [
         },
         image: 'twiins.jpg',
         description: [
-            "This is paragraph 1",
-            "I did this and this here"
+            "Twiins was a game I created for my 'Game Design' class at university. It was an Adobe Flash game written in ActionScript.",
+            "ActionScript is sadly not with us anymore, but the lessons learned during development have given me a strong foundation when it comes to best coding practices and conventions."
         ],
-        role: "Founder & Full Stack Developer",
+        role: "Sole Game Developer",
         technologies: [
             technologies.adobeFlash,
             technologies.adobePhotoshop,
@@ -300,10 +282,9 @@ const projects = [
         },
         image: 'little_princess.jpg',
         description: [
-            "This is paragraph 1",
-            "I did this and this here"
+            "Little Princess was a game created during a group project at university, made in AndEngine and written entirely in Java. The game revolved around a young princess running away from the dangers of the evil enchanted forest. Players had to swipe away enemies coming in from all sides of the screen, making sure that the princess could get to the end of the level.",
         ],
-        role: "Founder & Full Stack Developer",
+        role: "Game Developer & UI Designer",
         technologies: [
             technologies.android,
             technologies.java,

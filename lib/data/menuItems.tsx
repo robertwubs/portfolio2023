@@ -26,11 +26,6 @@ const menuItems = [
                 title: 'miLab',
                 slug: 'websites/milab',
                 backgroundImage: 'bg_milab.png'
-            } as MenuItem,
-            {
-                title: 'Portfolio',
-                slug: 'websites/portfolio',
-                backgroundImage: 'bg_portfolio.png'
             } as MenuItem
         ]
     } as MenuItem,

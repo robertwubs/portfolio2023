@@ -18,7 +18,7 @@ const InfoTable = ({ project }: InfoTableProps) => {
             </tr>
             {project.url && <tr>
                 <td><strong>URL: </strong></td>
-                <td><Link href={project.url} target="_blank">{project.url} <FontAwesomeIcon icon={faArrowUpRightFromSquare} /> </Link></td>
+                <td><Link href={project.url} target="_blank" rel="noreferrer">{project.url} <FontAwesomeIcon icon={faArrowUpRightFromSquare} /> </Link></td>
             </tr>}
             <tr>
                 <td><strong>Source Code: </strong></td>

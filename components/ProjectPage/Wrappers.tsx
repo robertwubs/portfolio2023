@@ -32,6 +32,10 @@ export const BottomWrapper = styled.div`
 
     p {
         letter-spacing: -0.3px;
+
+        a {
+            font-size: 15px;
+        }
     }
 
     ${device.tablet} {

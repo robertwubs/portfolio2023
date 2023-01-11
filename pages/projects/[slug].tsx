@@ -19,6 +19,8 @@ import Container from 'components/ui/Content/Container'
 import DynamicIcon from 'components/ui/DynamicIcon'
 import Gallery from 'components/ProjectPage/Gallery'
 
+import parse from 'html-react-parser'
+
 interface PageProps {
     project: Project
 }
@@ -50,7 +52,7 @@ const ProjectPage = ({ project }: PageProps) => {
         </TopWrapper>
         <BottomWrapper>
             <div>{project.description.map((line, index) => {
-                return <p key={`project-${index}`}>{line}</p>
+                return <p key={`project-${index}`}>{parse(line)}</p>
             })}</div>
             <Gallery project={project} />
         </BottomWrapper>

@@ -15,8 +15,9 @@ interface MenuProps {
 const PortfolioMenu = ({ menuItems, fromRouter = true, activeSlug = '', height = false }: MenuProps) => {
     let slug: string | string[] | undefined = activeSlug
 
+    const router = useRouter()
+
     if (fromRouter) {
-        const router = useRouter()
         slug = router.query.slug
     }
 
