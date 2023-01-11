@@ -26,6 +26,7 @@ export const Title = styled.p<TitleProps>`
 
     ${device.tablet}{
         animation: ${animations.moveLeftTitleDesktop} 500ms ease-in-out forwards;
+        animation-delay: 2s;
         font-size: 16px;
     }
     
@@ -42,16 +43,16 @@ export const Letter = styled.span`
     pointer-events: none;
     display: inline-block;
 
-        &.blue {
+    &.blue {
         color: ${colors.blue};
     }
 
-        &: not(.fixed){
+    &: not(.fixed){
         animation: ${animations.shrink} 350ms ease-in-out forwards;
         animation-delay: 2s;
     }
 
-        &.fixed.blue {
+    &.fixed.blue {
         animation: ${animations.moveLeft} 500ms ease-in-out forwards;
         animation-delay: 2s;
     }
